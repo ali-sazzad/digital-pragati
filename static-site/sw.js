@@ -1,4 +1,4 @@
-// Pragati Digital offline service worker for the static site.
+// Digital Pragati offline service worker for the static site.
 // Pages: network first, falling back to the cached copy.
 // Icons and the manifest: cache first.
 const CACHE = "pragati-static-v1";

@@ -1,4 +1,4 @@
-# Pragati Digital — Benchmark Test Cases
+# Digital Pragati — Benchmark Test Cases
 
 Derived from what the strongest agency sites do well, then raised one notch so Pragati beats them.
 

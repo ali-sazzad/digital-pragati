@@ -1,6 +1,6 @@
-# Pragati Digital: developer guide
+# Digital Pragati: developer guide
 
-How to run, configure, test and deploy the Pragati Digital website. For what the website is and who it's for, see the [project README](../README.md).
+How to run, configure, test and deploy the Digital Pragati website. For what the website is and who it's for, see the [project README](../README.md).
 
 This folder is the main site, built with Next.js 16: the landing page, the enquiry form, the enquiry backend (database + email) and a password-protected admin list. The standalone HTML version lives in [`../static-site/`](../static-site/).
 
@@ -50,7 +50,7 @@ cp .env.example .env.local
 | `PGLITE_DIR` | Optional | Where PGlite stores data when `DATABASE_URL` is empty. Default `.data/pglite`. |
 | `ADMIN_PASSWORD` | `/admin` | Without it, the admin page stays closed. |
 | `ADMIN_USER` | Optional | Admin username. Default `admin`. |
-| `ENQUIRY_ALLOWED_ORIGINS` | Static site | Comma-separated site addresses allowed to post to `/api/enquiry` from a browser, e.g. `https://www.pragatidigital.com`. |
+| `ENQUIRY_ALLOWED_ORIGINS` | Static site | Comma-separated site addresses allowed to post to `/api/enquiry` from a browser, e.g. `https://www.digitalpragati.com`. |
 | `ENQUIRY_RATE_LIMIT` | Optional | Enquiries per visitor per 10 minutes on `/api/enquiry`. Default 5. |
 | `ENQUIRY_DELIVERY` | Testing | Set to `log` to print enquiries instead of emailing them. |
 
@@ -73,7 +73,7 @@ The public API at `/api/enquiry` accepts JSON or URL-encoded form data. It is pr
 
 ### Connecting the static site
 
-The static site's form sends to the address in its `data-endpoint` attribute (in `../static-site/index.html`), currently `https://pragatidigital.com/api/enquiry`. To connect it to your own copy:
+The static site's form sends to the address in its `data-endpoint` attribute (in `../static-site/index.html`), currently `https://digitalpragati.com/api/enquiry`. To connect it to your own copy:
 
 1. Point `data-endpoint` at this site's `/api/enquiry`.
 2. Add the static site's address to `ENQUIRY_ALLOWED_ORIGINS` here.

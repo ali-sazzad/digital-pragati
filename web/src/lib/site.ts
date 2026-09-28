@@ -1,10 +1,10 @@
 // Single source for business facts and page copy.
-// TODO: confirm the production domain and contact email before launch.
+// TODO: confirm the digitalpragati.com domain and hello@ mailbox before launch.
 export const site = {
-  name: "Pragati Digital",
-  url: "https://pragatidigital.com",
-  email: "hello@pragatidigital.com",
-  title: "Web Design for Nepali Businesses in Australia & Nepal | Pragati",
+  name: "Digital Pragati",
+  url: "https://digitalpragati.com",
+  email: "hello@digitalpragati.com",
+  title: "Nepali Business Web Design, Australia & Nepal | Digital Pragati",
   description:
     "Lead-generation websites for Nepali-owned businesses in Sydney, Kathmandu and Pokhara. Strategy, copywriting, local SEO and fast mobile builds, custom-quoted.",
   themeColor: "#0E2350",

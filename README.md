@@ -1,4 +1,4 @@
-# Pragati Digital
+# Digital Pragati
 
 **Websites that win enquiries for Nepali-owned businesses in Australia and Nepal.**
 
@@ -6,7 +6,7 @@ We plan it, write it, build it and get it found on Google. You get a site that l
 
 *Pragati* (प्रगति) means progress. One team in Sydney and Kathmandu.
 
-This repository is the Pragati Digital website. Developer setup is at the [end of this page](#run-the-website).
+This repository is the Digital Pragati website. Developer setup is at the [end of this page](#run-the-website).
 
 ## Who we build for
 
@@ -88,8 +88,8 @@ Not as part of our launch service. We focus on sites that bring in enquiries. If
 
 Thirty minutes, in Nepali or English. We'll look at your current site or listing, tell you what we'd change first, and send a fixed quote afterwards.
 
-- **Website:** [pragatidigital.com](https://pragatidigital.com)
-- **Email:** hello@pragatidigital.com
+- **Website:** [digitalpragati.com](https://digitalpragati.com)
+- **Email:** hello@digitalpragati.com
 - **Where we work:** Sydney, Kathmandu and Pokhara
 
 We reply within one business day, Sydney or Kathmandu time.

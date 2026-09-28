@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "You're offline | Pragati Digital", robots: { index: false } };
+export const metadata: Metadata = { title: "You're offline | Digital Pragati", robots: { index: false } };
 
 export default function Offline() {
   return (

@@ -16,9 +16,9 @@ export default function Home() {
     <>
       <header className="site-header">
         <div className="wrap header-inner">
-          <a href="#main" className="wordmark" aria-label="Pragati Digital, home">
+          <a href="#main" className="wordmark" aria-label="Digital Pragati, home">
             <span lang="ne" className="wordmark-ne">प्रगति</span>
-            <span className="wordmark-en">Pragati Digital</span>
+            <span className="wordmark-en">Digital Pragati</span>
           </a>
           <nav aria-label="Main" className="top-nav">
             {nav.map((n) => (
@@ -222,7 +222,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="wrap footer-inner">
           <p>
-            <span lang="ne">प्रगति</span> Pragati Digital
+            <span lang="ne">प्रगति</span> Digital Pragati
           </p>
           <p>Sydney, Kathmandu and Pokhara</p>
           <p>

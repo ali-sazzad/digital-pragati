@@ -52,7 +52,7 @@ export async function deliverEnquiry(enquiry: Enquiry, id?: number): Promise<Del
   ];
 
   await getTransport(user, pass).sendMail({
-    from: { name: "Pragati Digital website", address: user },
+    from: { name: "Digital Pragati website", address: user },
     to: process.env.ENQUIRY_TO || user,
     ...(isEmail(enquiry.email) && { replyTo: { name: oneLine(enquiry.name), address: oneLine(enquiry.email) } }),
     subject: oneLine(`New enquiry: ${enquiry.business} (${market.label})`),

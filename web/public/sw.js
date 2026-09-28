@@ -1,4 +1,4 @@
-// Pragati Digital offline service worker.
+// Digital Pragati offline service worker.
 // Pages: network first, falling back to cache, then /offline.
 // Hashed build assets: cache first (their URLs change on every deploy).
 const CACHE = "pragati-v2";

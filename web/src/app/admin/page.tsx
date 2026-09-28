@@ -5,7 +5,7 @@ import { markets } from "@/lib/site";
 
 // Enquiries list. Password-protected by src/proxy.ts.
 
-export const metadata: Metadata = { title: "Enquiries | Pragati Digital", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Enquiries | Digital Pragati", robots: { index: false, follow: false } };
 
 const statusLabel: Record<EmailStatus, string> = {
   sent: "Emailed",
