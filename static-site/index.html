@@ -168,8 +168,8 @@ section{scroll-margin-top:80px}
 .dot[aria-current="true"]::before{width:28px;background:var(--accent)}
 .dot:hover::before{background:var(--muted)}
 .dot[aria-current="true"]:hover::before{background:var(--accent)}
-.carousel-count{font:500 .95rem/1 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
-.carousel-count b{color:var(--ink);font-weight:500}
+/* announces the concept in view to screen readers; the dots show it visually */
+.carousel-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .carousel-arrows{display:flex;gap:8px}
 .arrow{width:48px;height:48px;display:grid;place-items:center;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:border-color .2s ease,transform .2s ease}
 .arrow:hover:not(:disabled){border-color:var(--ink);transform:translateY(-1px)}
@@ -204,10 +204,6 @@ section{scroll-margin-top:80px}
   .carousel .case-body h3{font-size:1.2rem}
   .carousel .case-body p{font-size:.98rem;line-height:1.5}
   .carousel-controls{gap:8px}
-}
-@media (max-width:419px){
-  /* dots already show the position; keep the counter for screen readers only */
-  .carousel-count{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 }
 @media (min-width:768px){
   .carousel .case{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
@@ -615,7 +611,7 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
           <button type="button" class="dot" aria-label="Show concept 2: Lakeside hotel, Pokhara" aria-current="false"></button>
           <button type="button" class="dot" aria-label="Show concept 3: PTE institute, Putalisadak" aria-current="false"></button>
         </div>
-        <p class="carousel-count" aria-live="polite"><b>1</b> / 3</p>
+        <p class="carousel-status" aria-live="polite">Showing concept: Migration agency, Parramatta</p>
         <div class="carousel-arrows">
           <button type="button" class="arrow" data-step="-1" aria-label="Previous concept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
           <button type="button" class="arrow" data-step="1" aria-label="Next concept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
@@ -890,7 +886,7 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
   (()=>{
     const root=$('.carousel');if(!root)return;
     const track=root.querySelector('.carousel-track'),slides=[...track.children];
-    const dots=[...root.querySelectorAll('.dot')],count=root.querySelector('.carousel-count b');
+    const dots=[...root.querySelectorAll('.dot')],status=root.querySelector('.carousel-status');
     const [prev,next]=root.querySelectorAll('.arrow'),bar=root.querySelector('.carousel-progress span');
     const calm=matchMedia('(prefers-reduced-motion: reduce)');
     let active=-1,ticking=false;
@@ -900,7 +896,7 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
       if(i===active)return;active=i;
       slides.forEach((s,k)=>s.classList.toggle('is-active',k===i));
       dots.forEach((d,k)=>d.setAttribute('aria-current',String(k===i)));
-      count.textContent=i+1;prev.disabled=i===0;next.disabled=i===slides.length-1;
+      status.textContent='Showing concept: '+slides[i].querySelector('h3').textContent;prev.disabled=i===0;next.disabled=i===slides.length-1;
     };
     const sync=()=>{
       ticking=false;setActive(nearest());
