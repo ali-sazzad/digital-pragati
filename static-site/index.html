@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<title>Pragati Digital | Web Design Sydney &amp; Kathmandu</title>
+<meta name="description" content="Custom, fast-loading websites and booking platforms for Nepalese-owned businesses in Australia and growing businesses across Nepal. Book a free strategy call.">
+<link rel="canonical" href="https://www.pragatidigital.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pragati Digital | Web Design Sydney &amp; Kathmandu">
+<meta property="og:description" content="Fast, conversion-focused websites for businesses in Australia and Nepal. Custom quotes in AUD or NPR.">
+<meta property="og:url" content="https://www.pragatidigital.com/">
+<meta property="og:image" content="https://www.pragatidigital.com/icons/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#121A33" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C1122" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;600&family=JetBrains+Mono:wght@500&family=Mukta:wght@600&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Pragati Digital","description":"Web design, UI/UX, local SEO and progressive web apps for businesses in Australia and Nepal.","url":"https://www.pragatidigital.com/","logo":"https://www.pragatidigital.com/icons/icon-512.png","areaServed":[{"@type":"Country","name":"Australia"},{"@type":"Country","name":"Nepal"}],"location":[{"@type":"Place","name":"Sydney","address":{"@type":"PostalAddress","addressLocality":"Sydney","addressRegion":"NSW","addressCountry":"AU"}},{"@type":"Place","name":"Kathmandu","address":{"@type":"PostalAddress","addressLocality":"Kathmandu","addressCountry":"NP"}}],"knowsAbout":["Web design","Conversion rate optimisation","Local SEO","Progressive web apps","Online booking"],"currenciesAccepted":"AUD, NPR"}
+</script>
+<style>
+:root{
+  --paper:#F5F6FA;--surface:#FFFFFF;--ink:#121A33;--muted:#545D76;--line:#DCE0EA;
+  --accent:#C21F37;--on-accent:#FFFFFF;--blue:#1F3D8A;--tint:#EDF0F8;--ok:#1C7C4A;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Instrument Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --deva:"Mukta","Noto Sans Devanagari","Kohinoor Devanagari",sans-serif;
+  --gutter:clamp(16px,4vw,40px);--max:1180px;--r:14px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0C1122;--surface:#151B31;--ink:#E8EBF4;--muted:#A3ACC4;--line:#2A3250;
+  --accent:#FF6B7E;--on-accent:#0C1122;--blue:#9DB4F5;--tint:#1A2140;--ok:#5FD39A;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0C1122;--surface:#151B31;--ink:#E8EBF4;--muted:#A3ACC4;--line:#2A3250;
+  --accent:#FF6B7E;--on-accent:#0C1122;--blue:#9DB4F5;--tint:#1A2140;--ok:#5FD39A;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.35rem,6.4vw,4.6rem);font-weight:800}
+h2{font-size:clamp(1.85rem,4vw,2.9rem);font-weight:800}
+h3{font-size:1.3rem;font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+.eyebrow{font:500 .78rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.lede{font-size:clamp(1.1rem,1.6vw,1.25rem);color:var(--muted);max-width:60ch}
+.deva{font-family:var(--deva);letter-spacing:0;text-transform:none}
+.skip{position:absolute;left:12px;top:-100px;z-index:100;background:var(--ink);color:var(--paper);padding:14px 18px;border-radius:10px;min-height:48px}
+.skip:focus{top:12px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:52px;padding:0 24px;border-radius:999px;font:600 1rem/1 var(--body);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,background-color .15s ease}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--ink)}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;min-height:48px;font:800 1.2rem/1 var(--display);letter-spacing:-.02em}
+.brand svg{width:34px;height:34px;flex:none}
+.brand small{display:block;font:600 .8rem/1 var(--deva);color:var(--muted);margin-top:3px;letter-spacing:0}
+.nav{display:none;gap:4px;align-items:center}
+.nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 14px;text-decoration:none;font-weight:600;color:var(--muted);border-radius:10px}
+.nav a:hover{color:var(--ink)}
+.top .btn{min-height:48px;padding:0 18px;font-size:.95rem}
+.top-cta{display:none}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,88px) clamp(48px,6vw,80px)}
+.hero-grid{display:grid;gap:clamp(32px,5vw,56px);align-items:center}
+.hero-copy{display:grid;gap:22px;justify-items:start}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.markets-line{display:flex;flex-wrap:wrap;gap:8px 18px;font:500 .9rem/1.3 var(--mono);color:var(--muted)}
+.markets-line span{display:inline-flex;align-items:center;gap:8px}
+.markets-line span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.markets-line span+span::before{background:var(--blue)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* instrument */
+.instrument{position:relative;background:var(--ink);color:var(--paper);border-radius:22px;padding:22px;overflow:hidden;display:grid;gap:18px;isolation:isolate}
+:root[data-theme="dark"] .instrument{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .instrument{background:var(--surface);color:var(--ink);border:1px solid var(--line)}}
+.ridge{position:absolute;inset:auto 0 0 0;height:62%;z-index:-1;opacity:.9}
+.ridge path{fill:none;stroke-width:2}
+.ridge .r1{stroke:#FF6B7E}
+.ridge .r2{stroke:#9DB4F5;opacity:.55}
+.ridge .fill{fill:url(#rg);stroke:none}
+.ridge .draw{stroke-dasharray:1400;stroke-dashoffset:0;animation:draw 1.6s cubic-bezier(.3,.7,.2,1) both}
+@keyframes draw{from{stroke-dashoffset:1400}}
+.inst-head{display:flex;justify-content:space-between;align-items:center;gap:12px;font:500 .74rem/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.live{display:inline-flex;align-items:center;gap:8px}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:#5FD39A;box-shadow:0 0 0 0 rgba(95,211,154,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(95,211,154,0)}100%{box-shadow:0 0 0 0 rgba(95,211,154,0)}}
+.clocks{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.clock{border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px;display:grid;gap:4px;background:rgba(255,255,255,.03)}
+:root[data-theme="dark"] .clock,:root[data-theme="dark"] .meter{border-color:var(--line)}
+.clock b{font:500 clamp(1.5rem,3.4vw,2rem)/1 var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.clock span{font-size:.86rem;opacity:.78}
+.meters{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:40px}
+.meter{border-top:1px solid rgba(255,255,255,.2);padding-top:10px;display:grid;gap:2px}
+.meter small{font:500 .7rem/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.meter b{font:500 1.35rem/1.1 var(--mono);font-variant-numeric:tabular-nums}
+.meter i{font-style:normal;font-size:.78rem;opacity:.75}
+.meter .pass{color:#5FD39A}
+.inst-note{font-size:.84rem;opacity:.78;max-width:46ch}
+
+/* sections */
+section{scroll-margin-top:80px}
+.band{padding-block:clamp(56px,8vw,104px)}
+.band+.band{border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px);max-width:760px}
+
+/* markets */
+.switch{display:inline-grid;grid-template-columns:1fr 1fr;background:var(--tint);border-radius:999px;padding:5px;gap:4px;margin-bottom:28px;border:1px solid var(--line)}
+.switch button{min-height:48px;padding:0 22px;border:0;border-radius:999px;background:transparent;color:var(--muted);font:600 1rem/1 var(--body);cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(18,26,51,.12)}
+.market{display:grid;gap:clamp(24px,4vw,48px)}
+.market-intro{display:grid;gap:14px}
+.market-intro .cur{font:500 1rem/1.3 var(--mono);color:var(--blue)}
+.sector-list{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.sector-list li{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:16px 0;border-bottom:1px solid var(--line)}
+.sector-list b{font-weight:600}
+.sector-list span{color:var(--muted);font-size:1rem}
+.pay{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chip{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border-radius:999px;background:var(--tint);border:1px solid var(--line);font:500 .82rem/1 var(--mono)}
+
+/* services */
+.services{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.svc{background:var(--surface);padding:clamp(22px,3vw,32px);display:grid;gap:10px;align-content:start}
+.svc svg{width:36px;height:36px;color:var(--accent)}
+.svc p{color:var(--muted)}
+.svc ul{margin:4px 0 0;padding-left:1.1em;color:var(--muted);font-size:1rem;display:grid;gap:2px}
+
+/* work */
+.work{display:grid;gap:20px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid}
+.case-vis{background:var(--tint);padding:24px 24px 0;display:flex;justify-content:center;border-bottom:1px solid var(--line)}
+.phone{width:168px;max-width:100%;aspect-ratio:9/16;background:var(--surface);border:1px solid var(--line);border-bottom:0;border-radius:22px 22px 0 0;padding:14px 12px 0;display:grid;align-content:start;gap:8px;box-shadow:0 -6px 24px rgba(18,26,51,.07)}
+.phone .bar{height:8px;border-radius:4px;background:var(--line)}
+.phone .hd{height:54px;border-radius:10px}
+.phone .b1{width:80%}.phone .b2{width:60%}
+.phone .cta{height:26px;border-radius:13px;width:70%}
+.phone .row{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.phone .row div{height:40px;border-radius:8px;background:var(--tint)}
+.case-body{padding:22px;display:grid;gap:10px;align-content:start}
+.tag{justify-self:start;font:500 .72rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:7px 10px;border-radius:6px;border:1px dashed var(--muted);color:var(--muted)}
+.case-body p{color:var(--muted);font-size:1rem}
+.case-body dl{margin:6px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.9rem}
+.case-body dt{font:500 .74rem/1.6 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.case-body dd{margin:0}
+
+/* pledge */
+.pledge-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{text-align:left;padding:16px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font:500 .74rem/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--tint)}
+tbody tr:last-child td{border-bottom:0}
+td.num{font:500 1rem/1.4 var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.us{color:var(--accent)}
+.pledge-note{margin-top:16px;color:var(--muted);font-size:1rem;max-width:70ch}
+
+/* process */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding:22px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps .wk{font:500 .8rem/1.3 var(--mono);color:var(--accent);padding-top:4px}
+.steps p{color:var(--muted);margin-top:6px}
+
+/* faq */
+.faq{display:grid;border-top:1px solid var(--line);max-width:860px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:64px;padding:12px 0;font:600 1.1rem/1.35 var(--body)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:500 1.5rem/1 var(--mono);color:var(--accent);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 22px;color:var(--muted);max-width:68ch}
+
+/* contact */
+.contact{background:var(--ink);color:var(--paper)}
+:root[data-theme="dark"] .contact{background:var(--surface);color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .contact{background:var(--surface);color:var(--ink)}}
+.contact .grid{display:grid;gap:clamp(32px,5vw,64px)}
+.contact .lede{color:inherit;opacity:.82}
+.contact .eyebrow{color:#FF8C9B}
+.promise{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px;font-size:1rem}
+.promise li{display:flex;gap:10px}
+.promise li::before{content:"✓";color:#5FD39A;font-weight:700}
+form{background:var(--surface);color:var(--ink);border-radius:20px;padding:clamp(20px,3vw,32px);display:grid;gap:18px}
+.field{display:grid;gap:6px}
+label,.legend{font-weight:600;font-size:.95rem}
+.hint{font-size:.85rem;color:var(--muted);font-weight:400}
+input,select,textarea{width:100%;min-height:52px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font:400 1rem/1.4 var(--body)}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+[aria-invalid="true"]{border-color:var(--accent)}
+.err{color:var(--accent);font-size:.88rem;font-weight:600}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg label{display:flex;align-items:center;gap:10px;min-height:52px;padding:0 14px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;font-weight:600}
+.seg input{width:20px;height:20px;min-height:0;accent-color:var(--accent);margin:0}
+.seg label:has(input:checked){border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--surface))}
+.quote-note{font-size:1rem;color:var(--muted);background:var(--tint);border-radius:10px;padding:12px 14px}
+.form-ok{display:grid;gap:10px;padding:8px 0}
+.form-err{font-size:.95rem;padding:10px 12px;border-radius:10px;background:color-mix(in srgb,var(--accent) 8%,var(--surface))}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;visibility:hidden}
+.form-ok h3{color:var(--ok)}
+
+/* footer */
+footer{padding-block:40px 32px;font-size:.92rem;color:var(--muted)}
+footer .wrap{display:grid;gap:18px}
+.foot-links{display:flex;flex-wrap:wrap;gap:4px 8px}
+.foot-links a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;min-width:48px;padding:0 10px;text-decoration:none}
+.foot-links a:hover{color:var(--ink)}
+
+/* mobile bottom nav */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--surface);border-top:1px solid var(--line);padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:repeat(4,minmax(48px,1fr)) minmax(96px,1.25fr);gap:2px}
+.dock a{display:grid;place-items:center;gap:2px;min-height:52px;text-decoration:none;font:600 .72rem/1 var(--body);color:var(--muted);border-radius:12px}
+.dock a svg{width:22px;height:22px}
+.dock a.q{background:var(--accent);color:var(--on-accent);font-size:.85rem;grid-auto-flow:column;gap:6px}
+body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+
+@media (min-width:640px){
+  .services{grid-template-columns:1fr 1fr}
+  .sector-list li{grid-template-columns:200px minmax(0,1fr);gap:20px}
+  .steps li{grid-template-columns:120px minmax(0,1fr)}
+}
+@media (min-width:768px){
+  .dock{display:none}
+  body{padding-bottom:0}
+  .nav{display:flex}
+  .top-cta{display:inline-flex}
+  .work{grid-template-columns:repeat(3,1fr)}
+  .market{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+}
+@media (min-width:980px){
+  .hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+  .contact .grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}
+}
+
+/* ---------- motion ---------- */
+:root{--ease-out:cubic-bezier(.2,.7,.2,1);interpolate-size:allow-keywords}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+
+/* hero: one load sequence, timed with the ridge line drawing */
+.hero-copy>*{animation:rise .7s var(--ease-out) both}
+.hero-copy>:nth-child(2){animation-delay:.08s}
+.hero-copy>:nth-child(3){animation-delay:.16s}
+.hero-copy>:nth-child(4){animation-delay:.24s}
+.hero-copy>:nth-child(5){animation-delay:.32s}
+.instrument{animation:rise .8s .2s var(--ease-out) both}
+.meter b{transition:color .4s ease}
+
+/* market switch: a pill that slides to the chosen market */
+.switch{position:relative}
+.switch::before{content:"";position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 7px);border-radius:999px;background:var(--surface);box-shadow:0 1px 3px rgba(18,26,51,.12);transition:transform .35s var(--ease-out)}
+.switch[data-active="np"]::before{transform:translateX(calc(100% + 4px))}
+.switch button{position:relative;transition:color .25s ease}
+.switch button[aria-pressed="true"]{background:transparent;box-shadow:none}
+@keyframes panel-in{from{opacity:0;transform:translateY(10px)}}
+.market.entering{animation:panel-in .4s var(--ease-out) both}
+.market.entering .sector-list li{animation:rise .45s var(--ease-out) both}
+.market.entering .sector-list li:nth-child(2){animation-delay:.05s}
+.market.entering .sector-list li:nth-child(3){animation-delay:.1s}
+.market.entering .sector-list li:nth-child(4){animation-delay:.15s}
+
+/* FAQ: answers open and close smoothly where the browser supports it */
+.faq details::details-content{block-size:0;overflow-y:clip;transition:block-size .3s var(--ease-out),content-visibility .3s allow-discrete}
+.faq details[open]::details-content{block-size:auto}
+
+/* form success: the tick draws itself */
+.tick{width:44px;height:44px}
+.tick circle,.tick path{fill:none;stroke:var(--ok);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.tick circle{stroke-dasharray:139;animation:stroke .6s var(--ease-out) both}
+.tick path{stroke-dasharray:36;animation:stroke .35s .45s var(--ease-out) both}
+@keyframes stroke{from{stroke-dashoffset:var(--len,139)}}
+.tick path{--len:36}
+
+/* scroll-linked: without support, everything simply shows its finished state */
+@supports (animation-timeline:view()){
+  /* process: each step's rule fills in as you reach it */
+  .steps li{position:relative}
+  .steps li::before{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--accent);transform-origin:left center;animation:fill linear both;animation-timeline:view();animation-range:entry 70% cover 40%}
+  @keyframes fill{from{transform:scaleX(0)}}
+
+  /* concept builds: each wireframe assembles bar by bar */
+  .phone>*{transform-origin:left center;animation:build linear both;animation-timeline:view();animation-range:entry 10% cover 35%}
+  .phone>:nth-child(2){animation-range:entry 20% cover 38%}
+  .phone>:nth-child(3){animation-range:entry 30% cover 41%}
+  .phone>:nth-child(4){animation-range:entry 40% cover 44%}
+  .phone>:nth-child(5){animation-range:entry 50% cover 47%}
+  .phone>:nth-child(6){animation-range:entry 60% cover 50%}
+  @keyframes build{from{transform:scaleX(.06);opacity:.25}}
+}
+
+/* studio clocks graph: after the first draw, a signal pulse keeps sweeping each
+   ridge like a live monitor, and the area underneath breathes. pathLength=1000 on
+   the pulse paths makes the dash maths exact. At rest the pulses sit hidden. */
+.ridge .pulse{stroke-width:3;stroke-linecap:round;stroke-dasharray:70 1100;stroke-dashoffset:-1000}
+.ridge .pulse.p1{stroke:#FFE3E7;filter:drop-shadow(0 0 4px #FF6B7E);animation:sweep 5s 1.7s cubic-bezier(.45,0,.55,1) infinite}
+.ridge .pulse.p2{stroke:#DCE6FF;opacity:.6;stroke-width:2;filter:drop-shadow(0 0 3px #9DB4F5);animation:sweep 7s 4.2s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes sweep{0%{stroke-dashoffset:70}65%,100%{stroke-dashoffset:-1000}}
+.ridge .fill{animation:breathe 6s 1.6s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.5}}
+
+/* studio clocks: the graph gets its own row between the clocks and the figures,
+   so no line runs behind text. Grid order keeps the markup as it was. */
+.instrument>.inst-head{order:1}
+.instrument>.clocks{order:2}
+.instrument>.ridge{order:3;position:relative;inset:auto;z-index:auto;width:100%;height:clamp(84px,11vw,118px);opacity:1;margin-block:-4px -6px}
+.instrument>.meters{order:4;padding-top:0}
+.instrument>.inst-note{order:5}
+
+/* pledge on phones: each row becomes a compact block, no sideways scrolling */
+@media (max-width:639px){
+  .pledge-wrap{overflow:visible;border:0;background:none;border-radius:0}
+  .pledge-wrap table{min-width:0}
+  .pledge-wrap thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .pledge-wrap tbody{display:grid;gap:10px}
+  .pledge-wrap tr{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+  .pledge-wrap th[scope="row"]{grid-column:1/-1;padding:0;border:0;font:600 1rem/1.3 var(--body);letter-spacing:0}
+  .pledge-wrap td{padding:0;border:0}
+  .pledge-wrap td.num{display:grid;gap:3px;align-content:start;font-size:.95rem;white-space:normal}
+  .pledge-wrap td.num::before{content:attr(data-label);font:500 .68rem/1.25 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .pledge-wrap td.why{grid-column:1/-1;padding-top:10px;border-top:1px solid var(--line);font-size:.875rem;line-height:1.45;color:var(--muted)}
+  .pledge-note{font-size:.9rem}
+}
+tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+
+/* concept builds: loading-skeleton shimmer across each wireframe, top to bottom.
+   It lives on ::after so it layers over the scroll "assemble" animation. */
+:root{--shine:rgba(255,255,255,.75)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--shine:rgba(255,255,255,.09)}}
+:root[data-theme="dark"]{--shine:rgba(255,255,255,.09)}
+.phone>:not(.row),.phone .row>div{position:relative;overflow:hidden}
+.phone>:not(.row)::after,.phone .row>div::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 25%,var(--shine) 50%,transparent 75%);transform:translateX(-100%);animation:shimmer 1.8s ease-in-out infinite}
+.phone>:nth-child(2)::after,.phone>:nth-child(2)>div::after{animation-delay:.08s}
+.phone>:nth-child(3)::after,.phone>:nth-child(3)>div::after{animation-delay:.16s}
+.phone>:nth-child(4)::after,.phone>:nth-child(4)>div::after{animation-delay:.24s}
+.phone>:nth-child(5)::after,.phone>:nth-child(5)>div::after{animation-delay:.32s}
+.phone>:nth-child(6)::after,.phone>:nth-child(6)>div::after{animation-delay:.4s}
+@keyframes shimmer{60%,100%{transform:translateX(100%)}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .faq details::details-content{transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Pragati Digital home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#121A33"/><path d="M12 46 L24 32 L32 38 L46 20 L52 26" fill="none" stroke="#FF6B7E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="52" cy="26" r="4" fill="#FFFFFF"/></svg>
+      <span>Pragati Digital<small lang="ne">प्रगति</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#markets">Markets</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary top-cta" href="#contact">Get a quote</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="deva" lang="ne">प्रगति</span> · progress, built for the web</p>
+      <h1 id="hero-title">Websites that turn visitors into <em>booked customers</em>.</h1>
+      <p class="lede">We design and engineer fast, custom websites and booking platforms for Nepalese-owned businesses across Australia and growing businesses in Nepal. Clear copy, local search visibility and speed you can measure.</p>
+      <div class="markets-line" aria-label="Markets we serve"><span>Australia · quotes in AUD</span><span>Nepal · quotes in NPR</span></div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact" id="hero-cta">Book a free strategy call</a>
+        <a class="btn btn-ghost" href="#work">See concept builds</a>
+      </div>
+    </div>
+
+    <aside class="instrument" aria-labelledby="inst-title">
+      <svg class="ridge" viewBox="0 0 600 260" preserveAspectRatio="none" aria-hidden="true">
+        <defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6B7E" stop-opacity=".22"/><stop offset="1" stop-color="#FF6B7E" stop-opacity="0"/></linearGradient></defs>
+        <path class="fill" d="M0 220 L60 190 L95 205 L150 140 L185 165 L240 95 L270 120 L330 40 L365 85 L400 70 L450 125 L500 100 L545 150 L600 130 L600 260 L0 260Z"/>
+        <path class="r2 draw" d="M0 235 L70 215 L120 225 L180 180 L230 200 L300 150 L350 175 L420 130 L480 165 L540 150 L600 170"/>
+        <path class="r1 draw" d="M0 220 L60 190 L95 205 L150 140 L185 165 L240 95 L270 120 L330 40 L365 85 L400 70 L450 125 L500 100 L545 150 L600 130"/>
+        <path class="pulse p2" pathLength="1000" d="M0 235 L70 215 L120 225 L180 180 L230 200 L300 150 L350 175 L420 130 L480 165 L540 150 L600 170"/>
+        <path class="pulse p1" pathLength="1000" d="M0 220 L60 190 L95 205 L150 140 L185 165 L240 95 L270 120 L330 40 L365 85 L400 70 L450 125 L500 100 L545 150 L600 130"/>
+      </svg>
+      <div class="inst-head"><span id="inst-title">Studio clocks</span><span class="live">Live</span></div>
+      <div class="clocks">
+        <div class="clock"><span>Sydney</span><b id="t-syd">--:--</b><span id="z-syd">AEST</span></div>
+        <div class="clock"><span>Kathmandu</span><b id="t-ktm">--:--</b><span>NPT · UTC+5:45</span></div>
+      </div>
+      <div class="meters" aria-live="polite">
+        <div class="meter"><small>LCP</small><b id="m-lcp">…</b><i>target ≤ 2.5 s</i></div>
+        <div class="meter"><small>CLS</small><b id="m-cls">…</b><i>target ≤ 0.1</i></div>
+        <div class="meter"><small>Page size</small><b id="m-kb">…</b><i>transferred</i></div>
+      </div>
+      <p class="inst-note">This page, measured in your browser right now. Every site we ship is held to the same numbers.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="band" id="markets" aria-labelledby="markets-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Two markets, one standard</p>
+      <h2 id="markets-title">Built for how your customers actually search and pay.</h2>
+    </div>
+    <div class="switch" role="group" aria-label="Choose a market">
+      <button type="button" data-market="au" aria-pressed="true">Australia</button>
+      <button type="button" data-market="np" aria-pressed="false">Nepal</button>
+    </div>
+
+    <div class="market" data-panel="au">
+      <div class="market-intro">
+        <h3>For Nepalese-owned businesses in Sydney, Melbourne, Brisbane and beyond</h3>
+        <p class="lede">Your customers compare three or four providers on their phone before they call. We build the site that wins that comparison, then keep it ranking in local search.</p>
+        <p class="cur">Custom quote in AUD · optional monthly performance retainer</p>
+      </div>
+      <ul class="sector-list">
+        <li><b>Education consultancies</b><span>Course finders, counselling-session booking and document checklists that reduce back-and-forth.</span></li>
+        <li><b>Migration agents</b><span>Clear service pages, MARA registration shown up front, consultation booking with pre-screening questions.</span></li>
+        <li><b>Restaurants</b><span>Fast menus, table and catering enquiries, Google Business Profile aligned with the site.</span></li>
+        <li><b>Cleaning and trades</b><span>Suburb landing pages, quote forms that capture the job details, click-to-call on every screen.</span></li>
+      </ul>
+    </div>
+
+    <div class="market" data-panel="np" hidden>
+      <div class="market-intro">
+        <h3>For hotels, institutes and SMEs across Kathmandu, Pokhara and Chitwan</h3>
+        <p class="lede">Your guests and students arrive on everything from Wi-Fi to patchy 3G. We build installable web apps that load fast, keep working offline and take local payments.</p>
+        <p class="cur">Custom quote in NPR · optional monthly maintenance retainer</p>
+        <div class="pay" aria-label="Local payment pathways"><span class="chip">eSewa</span><span class="chip">Khalti</span><span class="chip">Fonepay QR</span></div>
+      </div>
+      <ul class="sector-list">
+        <li><b>Hotels and resorts</b><span>Thamel and Lakeside properties: room pages, direct booking enquiries and deposit links that cut OTA commission.</span></li>
+        <li><b>IELTS and PTE institutes</b><span>Class schedules, mock-test registration and fee payment by wallet or QR.</span></li>
+        <li><b>Trekking agencies</b><span>Itinerary pages that rank internationally, with offline-ready trip details for guests.</span></li>
+        <li><b>SMEs</b><span>A professional front door with Nepali and English content and a clear enquiry path.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="services" aria-labelledby="services-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">What we build</p>
+      <h2 id="services-title">Four services, focused on one outcome: more enquiries.</h2>
+    </div>
+    <div class="services">
+      <article class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h5"/></svg>
+        <h3>Lead-generation websites</h3>
+        <p>Custom-designed pages with copy written around your customers' questions and a clear path to contact.</p>
+        <ul><li>Conversion-focused page structure</li><li>Copywriting in English and Nepali</li></ul>
+      </article>
+      <article class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 15h2"/></svg>
+        <h3>Booking and enquiry flows</h3>
+        <p>Appointment, consultation, room and class booking that fits in a thumb's reach on a phone.</p>
+        <ul><li>Calendar and reminder integrations</li><li>Deposit links via eSewa, Khalti or Stripe</li></ul>
+      </article>
+      <article class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4M11 8v6M8 11h6"/></svg>
+        <h3>Local SEO</h3>
+        <p>Rank for "near me" and suburb searches in Australia, and for travellers searching Kathmandu and Pokhara.</p>
+        <ul><li>Google Business Profile alignment</li><li>Structured data and suburb pages</li></ul>
+      </article>
+      <article class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2M4 9l-2 3 2 3M20 9l2 3-2 3"/></svg>
+        <h3>Progressive web apps</h3>
+        <p>Installable, offline-ready sites that behave like an app without an app-store download.</p>
+        <ul><li>Offline pages and cached content</li><li>Add to Home Screen on Android and iOS</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Concept builds</p>
+      <h2 id="work-title">How we would approach three typical briefs.</h2>
+      <p class="lede">These are studio concepts, not client projects. They show the structure and flows we recommend for each type of business.</p>
+    </div>
+    <div class="work">
+      <article class="case">
+        <div class="case-vis" aria-hidden="true"><div class="phone"><div class="bar b1"></div><div class="hd" style="background:#1F3D8A"></div><div class="bar b2"></div><div class="row"><div></div><div></div></div><div class="cta" style="background:#C21F37"></div><div class="bar"></div></div></div>
+        <div class="case-body">
+          <span class="tag">Concept</span>
+          <h3>Migration agency, Parramatta</h3>
+          <p>A consultation funnel that asks visa type and timeline before booking, so the agent's first call is already qualified.</p>
+          <dl><dt>Flow</dt><dd>Visa finder → pre-screen → book</dd><dt>SEO</dt><dd>Suburb pages across Western Sydney</dd></dl>
+        </div>
+      </article>
+      <article class="case">
+        <div class="case-vis" aria-hidden="true"><div class="phone"><div class="hd" style="background:#2E6E68"></div><div class="bar b1"></div><div class="bar b2"></div><div class="row"><div></div><div></div></div><div class="row"><div></div><div></div></div><div class="cta" style="background:#C21F37"></div></div></div>
+        <div class="case-body">
+          <span class="tag">Concept</span>
+          <h3>Lakeside hotel, Pokhara</h3>
+          <p>Direct booking enquiries with a Khalti or eSewa deposit, and room details cached for guests on weak mobile signal.</p>
+          <dl><dt>Flow</dt><dd>Room → dates → deposit</dd><dt>PWA</dt><dd>Offline directions and check-in info</dd></dl>
+        </div>
+      </article>
+      <article class="case">
+        <div class="case-vis" aria-hidden="true"><div class="phone"><div class="bar b2"></div><div class="row"><div></div><div></div></div><div class="hd" style="background:#6B4BA8"></div><div class="bar b1"></div><div class="cta" style="background:#C21F37"></div><div class="bar b2"></div></div></div>
+        <div class="case-body">
+          <span class="tag">Concept</span>
+          <h3>PTE institute, Putalisadak</h3>
+          <p>Batch schedules, mock-test sign-up and fee payment by Fonepay QR, with reminders before each class.</p>
+          <dl><dt>Flow</dt><dd>Batch → register → pay</dd><dt>SEO</dt><dd>"PTE classes Kathmandu" landing page</dd></dl>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="pledge" aria-labelledby="pledge-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Performance pledge</p>
+      <h2 id="pledge-title">The numbers every launch has to hit.</h2>
+      <p class="lede">We test each site against these limits before handover. If a page misses one after launch, we fix it at no cost.</p>
+    </div>
+    <div class="pledge-wrap" tabindex="0" role="region" aria-label="Performance pledge table">
+      <table>
+        <thead><tr><th scope="col">Measure</th><th scope="col">Google's "good"</th><th scope="col">Our launch limit</th><th scope="col">Why it matters</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Largest Contentful Paint</th><td class="num" data-label="Google's good">≤ 2.5 s</td><td class="num us" data-label="Our launch limit">≤ 2.0 s</td><td class="why">How fast the main content appears on a mid-range phone.</td></tr>
+          <tr><th scope="row">Interaction to Next Paint</th><td class="num" data-label="Google's good">≤ 200 ms</td><td class="num us" data-label="Our launch limit">≤ 150 ms</td><td class="why">How quickly buttons and forms respond to a tap.</td></tr>
+          <tr><th scope="row">Cumulative Layout Shift</th><td class="num" data-label="Google's good">≤ 0.1</td><td class="num us" data-label="Our launch limit">≤ 0.05</td><td class="why">Nothing jumps while the page loads, so nobody taps the wrong thing.</td></tr>
+          <tr><th scope="row">Touch target size</th><td class="num" data-label="Google's good">24 px min</td><td class="num us" data-label="Our launch limit">48 px min</td><td class="why">Every button is easy to hit with a thumb.</td></tr>
+          <tr><th scope="row">Accessibility</th><td class="num" data-label="Google's good">WCAG 2.2 AA</td><td class="num us" data-label="Our launch limit">0 serious issues</td><td class="why">Readable and usable for everyone, in light and dark mode.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pledge-note">Measured at the 75th percentile on a throttled 4G connection, the same way Google's Chrome UX Report scores real visitors.</p>
+  </div>
+</section>
+
+<section class="band" id="process" aria-labelledby="process-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Process</p>
+      <h2 id="process-title">From first call to launch in four to six weeks.</h2>
+    </div>
+    <ol class="steps">
+      <li><span class="wk">Week 1</span><div><h3>Strategy call and audit</h3><p>A free 30-minute call, then a review of your current site, competitors and the searches your customers make.</p></div></li>
+      <li><span class="wk">Week 1–2</span><div><h3>Structure and copy</h3><p>Page map, wireframes and conversion copy. You approve the words before we design around them.</p></div></li>
+      <li><span class="wk">Week 2–4</span><div><h3>Design and build</h3><p>Custom interface design and development, reviewed on your own phone through a private preview link.</p></div></li>
+      <li><span class="wk">Week 4–5</span><div><h3>Test and launch</h3><p>Speed, accessibility, forms and payments tested against our pledge, then go-live with search setup.</p></div></li>
+      <li><span class="wk">Ongoing</span><div><h3>Grow</h3><p>Optional monthly retainer covering hosting, updates, search reporting and conversion improvements.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Questions</p>
+      <h2 id="faq-title">What business owners ask us first.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>How much does a website cost?</summary><p>Every project is quoted to its scope: the number of pages, booking or payment features, and how much copywriting and SEO you need. Australian projects are quoted in AUD and Nepal projects in NPR. The strategy call is free and you get a written fixed quote afterwards.</p></details>
+      <details><summary>How long until my site is live?</summary><p>Most lead-generation sites launch in four to six weeks. Larger multi-page platforms take longer, and we give you the week-by-week plan before you sign.</p></details>
+      <details><summary>Do I own the website?</summary><p>Yes. Your domain, content and site are yours. If you ever leave, we hand over everything you need to move it.</p></details>
+      <details><summary>Can customers pay with eSewa, Khalti or Fonepay?</summary><p>Yes. For Nepal projects we set up deposit and payment pathways through eSewa, Khalti or Fonepay QR. For Australian projects we use Stripe or your existing booking system.</p></details>
+      <details><summary>Will I be able to update it myself?</summary><p>Yes. You get an editor for text, images and menus, plus a short recorded walkthrough. Retainer clients can also send changes to us.</p></details>
+      <details><summary>What is a progressive web app?</summary><p>A website that can be installed on a phone's home screen, loads instantly on repeat visits and keeps key pages working offline. It suits hotels, trekking agencies and institutes whose visitors are often on weak signal.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow">Start a project</p>
+      <h2 id="contact-title" style="margin-block:14px">Book your free 30-minute strategy call.</h2>
+      <p class="lede">Tell us a little about your business. We'll review your current site before the call so the time is useful.</p>
+      <ul class="promise">
+        <li>Reply within one business day, Sydney or Kathmandu time</li>
+        <li>Written fixed quote after the call</li>
+        <li>No obligation and no lock-in contract</li>
+      </ul>
+    </div>
+
+    <!-- data-endpoint: the Next.js site's enquiry API. Change it if that site lives elsewhere, and list this site's address in ENQUIRY_ALLOWED_ORIGINS there. -->
+    <form id="quote" novalidate data-endpoint="https://pragatidigital.com/api/enquiry">
+      <div id="form-fields" style="display:grid;gap:18px">
+        <fieldset>
+          <legend class="legend">Where is your business?</legend>
+          <div class="seg">
+            <label for="mk-au"><input type="radio" id="mk-au" name="market" value="au" checked> Australia</label>
+            <label for="mk-np"><input type="radio" id="mk-np" name="market" value="np"> Nepal</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" autocomplete="name" required aria-describedby="e-name">
+          <span class="err" id="e-name" hidden>Enter your name so we know who to ask for.</span>
+        </div>
+        <div class="field">
+          <label for="f-biz">Business name</label>
+          <input id="f-biz" name="business" autocomplete="organization" required aria-describedby="e-biz">
+          <span class="err" id="e-biz" hidden>Enter your business name.</span>
+        </div>
+        <div class="field">
+          <label for="f-contact">Email or phone <span class="hint">(we reply to whichever you give)</span></label>
+          <input id="f-contact" name="contact" autocomplete="email" inputmode="email" required aria-describedby="e-contact">
+          <span class="err" id="e-contact" hidden>Enter an email address or a phone number with at least 8 digits.</span>
+        </div>
+        <div class="field">
+          <label for="f-need">What do you need?</label>
+          <select id="f-need" name="need">
+            <option>A new website</option>
+            <option>A redesign of my current site</option>
+            <option>Online booking or payments</option>
+            <option>Local SEO</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Anything else? <span class="hint">(optional)</span></label>
+          <textarea id="f-msg" name="message" rows="3"></textarea>
+        </div>
+        <p class="quote-note" id="quote-note" aria-live="polite">Quoted in AUD. Payments by card or bank transfer.</p>
+        <div class="hp" aria-hidden="true"><label for="f-website">Leave this empty</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <p class="err form-err" id="form-err" role="alert" hidden></p>
+        <button class="btn btn-primary" type="submit" id="submit">Request my strategy call</button>
+      </div>
+      <div class="form-ok" id="form-ok" hidden tabindex="-1">
+        <svg class="tick" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M14 25l7 7 13-15"/></svg>
+        <h3>Request received</h3>
+        <p id="ok-msg">We'll reply within one business day.</p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="#services">Services</a><a href="#work">Concept builds</a><a href="#pledge">Performance pledge</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+    </div>
+    <p>Pragati Digital · Web design, local SEO and web apps · Sydney, Australia and Kathmandu, Nepal</p>
+    <p>© <span id="yr">2026</span> Pragati Digital. <span lang="ne" class="deva">प्रगति</span> means progress.</p>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Quick">
+  <a href="#top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 11 12 4l9 7v9H3z"/></svg>Home</a>
+  <a href="#work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>Work</a>
+  <a href="#process"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/></svg>Process</a>
+  <a href="#faq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6M12 17h.01"/></svg>FAQ</a>
+  <a href="#contact" class="q">Get a quote</a>
+</nav>
+
+<script>
+(()=>{
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  $('#yr').textContent=new Date().getFullYear();
+
+  // Studio clocks
+  const fmt=tz=>new Intl.DateTimeFormat('en-AU',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:tz});
+  const fS=fmt('Australia/Sydney'), fK=fmt('Asia/Kathmandu');
+  const zS=new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Sydney',timeZoneName:'short'});
+  const tick=()=>{const d=new Date();$('#t-syd').textContent=fS.format(d);$('#t-ktm').textContent=fK.format(d);
+    const z=(zS.formatToParts(d).find(p=>p.type==='timeZoneName')||{}).value||'';$('#z-syd').textContent=/AEDT|GMT\+11|UTC\+11/.test(z)?'AEDT · UTC+11':'AEST · UTC+10';};
+  tick(); setInterval(tick,15000);
+
+  // Self-measured performance
+  const pass=(el,ok)=>el.classList.toggle('pass',ok);
+  const calm=matchMedia('(prefers-reduced-motion: reduce)');
+  // Counts a meter up from its last value; the live region stays busy until the
+  // final number lands, so screen readers announce it once.
+  const countTo=(el,to,dp,unit)=>{
+    const from=el._v||0, meters=el.closest('.meters'), t0=performance.now(), dur=700;
+    el._v=to; cancelAnimationFrame(el._raf);
+    const show=v=>el.textContent=v.toFixed(dp)+unit;
+    if(calm.matches||from===to){show(to);return;}
+    meters.setAttribute('aria-busy','true');
+    const step=now=>{const p=Math.min(1,Math.max(0,(now-t0)/dur)),e=1-Math.pow(1-p,3);show(from+(to-from)*e);
+      if(p<1)el._raf=requestAnimationFrame(step);else meters.setAttribute('aria-busy','false');};
+    el._raf=requestAnimationFrame(step);
+  };
+  let lcp=0, cls=0;
+  try{new PerformanceObserver(l=>{const e=l.getEntries();lcp=e[e.length-1].startTime;const el=$('#m-lcp');countTo(el,lcp/1000,2,' s');pass(el,lcp<=2500);}).observe({type:'largest-contentful-paint',buffered:true});}catch(e){$('#m-lcp').textContent='n/a';}
+  try{new PerformanceObserver(l=>{for(const e of l.getEntries()){if(!e.hadRecentInput)cls+=e.value;}const el=$('#m-cls');countTo(el,cls,3,'');pass(el,cls<=.1);}).observe({type:'layout-shift',buffered:true});$('#m-cls').textContent='0.000';pass($('#m-cls'),true);}catch(e){$('#m-cls').textContent='n/a';}
+  addEventListener('load',()=>setTimeout(()=>{
+    const n=performance.getEntriesByType('navigation')[0];
+    let b=(n&&(n.transferSize||n.encodedBodySize))||0;
+    performance.getEntriesByType('resource').forEach(r=>b+=r.transferSize||0);
+    if(b)countTo($('#m-kb'),Math.round(b/1024),0,' KB');else $('#m-kb').textContent='cached';
+    if(!lcp)$('#m-lcp').textContent==='…'&&($('#m-lcp').textContent='n/a');
+  },300));
+
+  // Market switch, synced with form
+  const notes={au:'Quoted in AUD. Payments by card or bank transfer.',np:'Quoted in NPR. Pay by eSewa, Khalti, Fonepay QR or bank transfer.'};
+  const setMarket=(m,animate)=>{
+    const sw=$('.switch'), changed=sw.dataset.active!==m;
+    sw.dataset.active=m;
+    $$('.switch button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.market===m)));
+    $$('[data-panel]').forEach(p=>{
+      p.hidden=p.dataset.panel!==m;
+      p.classList.remove('entering');
+      if(animate&&changed&&!p.hidden){void p.offsetWidth;p.classList.add('entering');}
+    });
+    const r=$('#mk-'+m); if(r&&!r.checked) r.checked=true;
+    $('#quote-note').textContent=notes[m];
+    try{localStorage.setItem('pd-market',m)}catch(e){}
+  };
+  $('.switch').dataset.active='au';
+  $$('.switch button').forEach(b=>b.addEventListener('click',()=>setMarket(b.dataset.market,true)));
+  $$('input[name=market]').forEach(r=>r.addEventListener('change',()=>setMarket(r.value,false)));
+  let saved=null; try{saved=localStorage.getItem('pd-market')}catch(e){}
+  if(!saved&&/Kathmandu|Katmandu/.test(Intl.DateTimeFormat().resolvedOptions().timeZone||''))saved='np';
+  if(saved==='np')setMarket('np');
+
+  // Form
+  const form=$('#quote');
+  const checks={
+    'f-name':v=>v.trim().length>1,
+    'f-biz':v=>v.trim().length>1,
+    'f-contact':v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())||v.replace(/\D/g,'').length>=8
+  };
+  const validate=id=>{const i=$('#'+id),ok=checks[id](i.value);i.setAttribute('aria-invalid',String(!ok));$('#e-'+id.slice(2)).hidden=ok;return ok;};
+  Object.keys(checks).forEach(id=>$('#'+id).addEventListener('blur',()=>{if($('#'+id).value)validate(id)}));
+  // Sends to the Next.js site's /api/enquiry (set in data-endpoint on the form).
+  // Success is shown only when the server confirms it received the enquiry.
+  const fallback="We couldn't send your enquiry just now. Try again in a few minutes, or email us at hello@pragatidigital.com.";
+  const fieldFor={name:'f-name',business:'f-biz',contact:'f-contact'};
+  const showFormError=msg=>{const el=$('#form-err');el.textContent=msg;el.hidden=false;};
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    $('#form-err').hidden=true;
+    const bad=Object.keys(checks).filter(id=>!validate(id));
+    if(bad.length){$('#'+bad[0]).focus();return;}
+    const url=form.dataset.endpoint;
+    if(!url){showFormError('This form isn’t connected yet. Email us at hello@pragatidigital.com.');return;}
+    const btn=$('#submit'),label=btn.textContent;btn.disabled=true;btn.textContent='Sending…';
+    const data=Object.fromEntries(new FormData(form));
+    let res=null,body={};
+    try{res=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)});body=await res.json().catch(()=>({}));}catch(err){}
+    btn.disabled=false;btn.textContent=label;
+    if(res&&res.ok&&body.ok){
+      const first=data.name.trim().split(/\s+/)[0];
+      $('#ok-msg').textContent=`Thanks, ${first}. We'll reply within one business day (${data.market==='np'?'Kathmandu':'Sydney'} time) to confirm a call slot.`;
+      $('#form-fields').hidden=true;$('#form-ok').hidden=false;$('#form-ok').focus();
+      return;
+    }
+    // Field problems the server caught: show them where they belong.
+    const fields=Object.keys(body.errors||{}).filter(k=>fieldFor[k]);
+    if(fields.length){
+      fields.forEach(k=>{const id=fieldFor[k];$('#'+id).setAttribute('aria-invalid','true');const m=$('#e-'+id.slice(2));m.textContent=body.errors[k];m.hidden=false;});
+      $('#'+fieldFor[fields[0]]).focus();
+      return;
+    }
+    showFormError(body.error||fallback);
+  });
+
+  // Service worker
+  if('serviceWorker' in navigator&&location.protocol!=='file:'){
+    addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{});});
+  }
+})();
+</script>
+
+</body>
+</html>

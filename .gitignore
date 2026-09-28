@@ -1,0 +1,15 @@
+# Internal business notes: kept on this computer only.
+gemini-code-*.txt
+
+# Local assistant memory, not part of the site.
+/.remember/
+
+# OS and editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# The Next.js app has its own ignores in web/.gitignore (node_modules, .next,
+# .env files, the local database in web/.data and test output).
