@@ -13,3 +13,6 @@ desktop.ini
 
 # The Next.js app has its own ignores in web/.gitignore (node_modules, .next,
 # .env files, the local database in web/.data and test output).
+
+# Local preview build of the site, not published
+/.artifact/
