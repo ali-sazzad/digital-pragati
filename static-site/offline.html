@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>You're offline | Digital Pragati</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<!-- Shown by sw.js for pages that aren't saved on this device while offline.
+     Self-contained: no web fonts or other network requests. -->
+<style>
+:root{--paper:#F5F6FA;--surface:#FFFFFF;--ink:#121A33;--muted:#545D76;--line:#DCE0EA;--accent:#C21F37;--on-accent:#FFFFFF;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--paper:#0C1122;--surface:#151B31;--ink:#E8EBF4;--muted:#A3ACC4;--line:#2A3250;--accent:#FF6B7E;--on-accent:#0C1122;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px 16px;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:34rem;display:grid;gap:16px;justify-items:start}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em}
+.brand svg{width:34px;height:34px}
+h1{margin:0;font-size:clamp(1.9rem,6vw,2.6rem);line-height:1.1;letter-spacing:-.02em}
+p{margin:0;color:var(--muted)}
+a.btn{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border-radius:999px;background:var(--accent);color:var(--on-accent);font-weight:600;text-decoration:none}
+a.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+<main>
+  <div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#121A33"/><path d="M12 46 L24 32 L32 38 L46 20 L52 26" fill="none" stroke="#FF6B7E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="52" cy="26" r="4" fill="#FFFFFF"/></svg>Digital Pragati</div>
+  <h1>You're offline</h1>
+  <p>This page isn't saved on your device. Reconnect to the internet, then reload to continue. Pages you've already visited, like the home page, still work offline.</p>
+  <a class="btn" href="./">Go to the home page</a>
+</main>
+</body>
+</html>

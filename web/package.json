@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "sync:static": "node scripts/sync-static-site.mjs",
+    "predev": "npm run sync:static",
     "dev": "next dev",
+    "prebuild": "npm run sync:static",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:e2e": "next build && playwright test",
+    "test:e2e": "npm run build && playwright test",
     "test": "playwright test"
   },
   "dependencies": {

@@ -1,5 +1,4 @@
-export type EnquiryField = "name" | "business" | "email" | "phone" | "message";
-export type EnquiryErrors = Partial<Record<EnquiryField | "contact" | "need", string>>;
+export type EnquiryErrors = Partial<Record<"name" | "business" | "email" | "phone" | "contact" | "need" | "message", string>>;
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const isEmail = (s: string) => emailPattern.test(s.trim());
@@ -13,22 +12,8 @@ function checkLengths(data: Partial<Record<keyof typeof limits, string>>, errors
   }
 }
 
-// The Next.js form: email and a short message are required.
-// Shared by the browser (instant feedback) and the server (source of truth).
-export function validateEnquiry(data: Record<EnquiryField, string>): EnquiryErrors {
-  const errors: EnquiryErrors = {};
-  if (!data.name.trim()) errors.name = "Enter your name.";
-  if (!data.business.trim()) errors.business = "Enter your business name.";
-  if (!data.email.trim()) errors.email = "Enter your email address.";
-  else if (!emailPattern.test(data.email.trim())) errors.email = "Enter an email address like name@business.com.";
-  if (data.phone.trim() && digits(data.phone) < 8)
-    errors.phone = "Enter a phone number with at least 8 digits, or leave it blank.";
-  if (data.message.trim().length < 10) errors.message = "Tell us a little about your business (at least 10 characters).";
-  checkLengths(data, errors);
-  return errors;
-}
-
-// What gets stored and emailed, whichever form it came from.
+// What gets stored and emailed. Source "site" marks enquiries from the retired
+// Next.js landing page (older rows); the website's form now sends "static".
 export type Enquiry = {
   source: "site" | "static";
   market: "au" | "np";
@@ -40,9 +25,9 @@ export type Enquiry = {
   message: string;
 };
 
-// The public API (used by the static site). Its form has one "email or phone"
-// box, a "what do you need" menu and an optional message, and it may also send
-// separate email/phone fields.
+// The enquiry API (used by the website's form, on Vercel and GitHub Pages). The
+// form has one "email or phone" box, a "what do you need" menu and an optional
+// message; API callers may also send separate email/phone fields.
 export function parseApiEnquiry(body: Record<string, unknown>): { enquiry: Enquiry; errors: EnquiryErrors } {
   const str = (k: string) => (typeof body[k] === "string" ? (body[k] as string).trim() : "");
   const contact = str("contact");

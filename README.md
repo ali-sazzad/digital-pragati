@@ -1,112 +1,129 @@
 # Digital Pragati
 
-**Websites that win enquiries for Nepali-owned businesses in Australia and Nepal.**
+**Websites that turn visitors into booked customers.**
 
-We plan it, write it, build it and get it found on Google. You get a site that loads fast on a phone and turns visitors into calls, bookings and quote requests. Quoted in AUD or NPR.
+We design and engineer fast, custom websites and booking platforms for Nepalese-owned businesses across Australia and growing businesses in Nepal. Clear copy, local search visibility and speed you can measure.
 
-*Pragati* (प्रगति) means progress. One team in Sydney and Kathmandu.
+*Pragati* (प्रगति) means progress: progress, built for the web. Quotes in AUD for Australia and NPR for Nepal.
 
-This repository is the Digital Pragati website. Developer setup is at the [end of this page](#run-the-website).
+**Live site:** [digital-pragati.vercel.app](https://digital-pragati.vercel.app) (also on [GitHub Pages](https://ali-sazzad.github.io/digital-pragati/)). Developer setup is at the [end of this page](#run-the-website).
 
-## Who we build for
+## Two markets, one standard
+
+Built for how your customers actually search and pay.
 
 ### Australia
 
-Migration agents, education consultancies, restaurants, cleaning and trade businesses across Sydney, Melbourne and Brisbane.
+For Nepalese-owned businesses in Sydney, Melbourne, Brisbane and beyond. Your customers compare three or four providers on their phone before they call. We build the site that wins that comparison, then keep it ranking in local search.
 
-Built to bring in enquiries: calls, quote requests and consultation bookings from people searching nearby. Quoted in **AUD**; pay by bank transfer or card.
+*Custom quote in AUD, with an optional monthly performance retainer.*
+
+| Business | What we build |
+| --- | --- |
+| Education consultancies | Course finders, counselling-session booking and document checklists that reduce back-and-forth. |
+| Migration agents | Clear service pages, MARA registration shown up front, consultation booking with pre-screening questions. |
+| Restaurants | Fast menus, table and catering enquiries, Google Business Profile aligned with the site. |
+| Cleaning and trades | Suburb landing pages, quote forms that capture the job details, click-to-call on every screen. |
 
 ### Nepal
 
-Hotels and guesthouses in Thamel and Pokhara, PTE and IELTS institutes, and growing local businesses.
+For hotels, institutes and SMEs across Kathmandu, Pokhara and Chitwan. Your guests and students arrive on everything from Wi-Fi to patchy 3G. We build installable web apps that load fast, keep working offline and take local payments.
 
-Built for direct bookings and admissions, so fewer of your customers arrive through commission platforms. Quoted in **NPR**; pay by eSewa, Khalti, Fonepay or bank transfer.
+*Custom quote in NPR, with an optional monthly maintenance retainer. Payments by eSewa, Khalti or Fonepay QR.*
 
-## What you get
+| Business | What we build |
+| --- | --- |
+| Hotels and resorts | Thamel and Lakeside properties: room pages, direct booking enquiries and deposit links that cut OTA commission. |
+| IELTS and PTE institutes | Class schedules, mock-test registration and fee payment by wallet or QR. |
+| Trekking agencies | Itinerary pages that rank internationally, with offline-ready trip details for guests. |
+| SMEs | A professional front door with Nepali and English content and a clear enquiry path. |
 
-- **A four-part site that does one job well.** Home, About, Services and a Contact form. Every page leads to the same place: a customer getting in touch.
-- **Copy written for your customers.** We interview you, then write every word. In English, with Nepali where your customers expect it.
-- **Found on Google, locally.** Google Business Profile set up or cleaned up, local search terms on every page, and structured data search engines can read.
-- **Fast on a mid-range phone.** Most of your visitors arrive on mobile data. We build for that first and test on real devices before launch.
+## What we build
 
-Online stores, booking engines and custom databases aren't part of our launch service. If your project needs one, we'll tell you on the first call and point you to someone who does it well.
+Four services, focused on one outcome: more enquiries.
 
-## Four weeks, written down
+- **Lead-generation websites.** Custom-designed pages with copy written around your customers' questions and a clear path to contact. Conversion-focused page structure; copywriting in English and Nepali.
+- **Booking and enquiry flows.** Appointment, consultation, room and class booking that fits in a thumb's reach on a phone. Calendar and reminder integrations; deposit links via eSewa, Khalti or Stripe.
+- **Local SEO.** Rank for "near me" and suburb searches in Australia, and for travellers searching Kathmandu and Pokhara. Google Business Profile alignment; structured data and suburb pages.
+- **Progressive web apps.** Installable, offline-ready sites that behave like an app without an app-store download. Offline pages and cached content; Add to Home Screen on Android and iOS.
 
-1. **Week 1: Strategy call and brief.** We learn who your customers are and what a good enquiry looks like. You get a written plan and a fixed quote.
-2. **Week 2: Words and structure.** We write every page. You approve the copy before any design starts, so nothing is designed around placeholder text.
-3. **Week 3: Design and build.** Mobile first, in your brand. You review a working site on your own phone, not a picture of one.
-4. **Week 4: Launch and local SEO.** Domain, Google Business Profile, analytics and a handover session so you can update your own text and photos.
+## Concept builds
 
-After launch, monthly care is optional: hosting, updates and a short performance report each month.
+How we would approach three typical briefs. These are studio concepts, not client projects.
 
-## Our performance pledge
-
-Every site we launch meets these numbers on a mid-range phone. If it doesn't at handover, we fix it before you pay the final invoice.
-
-| Measure | Target | What it means for your customers |
+| Concept | Brief | Flow |
 | --- | --- | --- |
-| Largest Contentful Paint | ≤ 2.5 s | Main content shows within 2.5 seconds on a mobile connection. |
-| Cumulative Layout Shift | ≤ 0.1 | Nothing jumps around while the page loads. |
-| Interaction to Next Paint | ≤ 200 ms | Buttons and menus respond without a noticeable delay. |
-| Tap targets | ≥ 48 px | Every button is easy to hit with a thumb. |
-| Accessibility | WCAG 2.2 AA | Readable contrast, keyboard access and screen reader labels. |
+| Migration agency, Parramatta | A consultation funnel that asks visa type and timeline before booking, so the agent's first call is already qualified. Suburb pages across Western Sydney. | Visa finder → pre-screen → book |
+| Lakeside hotel, Pokhara | Direct booking enquiries with a Khalti or eSewa deposit, and room details cached for guests on weak mobile signal. Offline directions and check-in info. | Room → dates → deposit |
+| PTE institute, Putalisadak | Batch schedules, mock-test sign-up and fee payment by Fonepay QR, with reminders before each class. A "PTE classes Kathmandu" landing page. | Batch → register → pay |
 
-The website itself is held to the same numbers: it measures its own load speed and layout shift in each visitor's browser and shows the result on the page.
+## Performance pledge
 
-## Concept work
+The numbers every launch has to hit. We test each site against these limits before handover. If a page misses one after launch, we fix it at no cost.
 
-We're a new studio, so rather than borrow logos we've designed concepts for the kinds of businesses we serve. Each is a concept, not a client project.
+| Measure | Google's "good" | Our launch limit | Why it matters |
+| --- | --- | --- | --- |
+| Largest Contentful Paint | ≤ 2.5 s | ≤ 2.0 s | How fast the main content appears on a mid-range phone. |
+| Interaction to Next Paint | ≤ 200 ms | ≤ 150 ms | How quickly buttons and forms respond to a tap. |
+| Cumulative Layout Shift | ≤ 0.1 | ≤ 0.05 | Nothing jumps while the page loads, so nobody taps the wrong thing. |
+| Touch target size | 24 px min | 48 px min | Every button is easy to hit with a thumb. |
+| Accessibility | WCAG 2.2 AA | 0 serious issues | Readable and usable for everyone, in light and dark mode. |
 
-| Concept | Where | Brief |
-| --- | --- | --- |
-| Himal Migration | Parramatta, NSW | Consultation bookings for skilled and student visa enquiries. |
-| Phewa Lakeside Lodge | Pokhara | Direct room enquiries by WhatsApp and email, with lake-view photos first. |
-| Score Up PTE | Kathmandu | Class schedule and trial-lesson sign-ups for PTE and IELTS students. |
+Measured at the 75th percentile on a throttled 4G connection, the same way Google's Chrome UX Report scores real visitors. The website itself shows its own load speed, layout shift and page size, measured live in each visitor's browser.
 
-## Questions owners ask us
+## Process
+
+From first call to launch in four to six weeks.
+
+1. **Week 1: Strategy call and audit.** A free 30-minute call, then a review of your current site, competitors and the searches your customers make.
+2. **Week 1–2: Structure and copy.** Page map, wireframes and conversion copy. You approve the words before we design around them.
+3. **Week 2–4: Design and build.** Custom interface design and development, reviewed on your own phone through a private preview link.
+4. **Week 4–5: Test and launch.** Speed, accessibility, forms and payments tested against our pledge, then go-live with search setup.
+5. **Ongoing: Grow.** Optional monthly retainer covering hosting, updates, search reporting and conversion improvements.
+
+## What business owners ask us first
 
 **How much does a website cost?**
-Every project is quoted on its scope and what it needs to achieve. You get a fixed quote in AUD or NPR after the strategy call, before any work starts, so there are no hourly surprises.
+Every project is quoted to its scope: the number of pages, booking or payment features, and how much copywriting and SEO you need. Australian projects are quoted in AUD and Nepal projects in NPR. The strategy call is free and you get a written fixed quote afterwards.
 
-**How long does it take?**
-Four weeks from an approved brief for a standard four-part site. The main thing that affects timing is how quickly we receive your photos, logo and feedback.
+**How long until my site is live?**
+Most lead-generation sites launch in four to six weeks. Larger multi-page platforms take longer, and we give you the week-by-week plan before you sign.
 
-**Who owns the website and domain?**
-You do. The domain is registered in your name, and the site, copy and images are yours once the final invoice is paid.
+**Do I own the website?**
+Yes. Your domain, content and site are yours. If you ever leave, we hand over everything you need to move it.
 
-**Do I have to pay every month?**
-No. Monthly care covering hosting, updates and a performance report is optional. You can also host the site yourself.
+**Can customers pay with eSewa, Khalti or Fonepay?**
+Yes. For Nepal projects we set up deposit and payment pathways through eSewa, Khalti or Fonepay QR. For Australian projects we use Stripe or your existing booking system.
 
-**Can we meet in Nepali?**
-Yes. Calls and meetings run in Nepali or English, whichever suits you and your team.
+**Will I be able to update it myself?**
+Yes. You get an editor for text, images and menus, plus a short recorded walkthrough. Retainer clients can also send changes to us.
 
-**Can you build an online store?**
-Not as part of our launch service. We focus on sites that bring in enquiries. If you need a store, we'll say so on the first call.
+**What is a progressive web app?**
+A website that can be installed on a phone's home screen, loads instantly on repeat visits and keeps key pages working offline. It suits hotels, trekking agencies and institutes whose visitors are often on weak signal.
 
-## Book a free strategy call
+## Book your free 30-minute strategy call
 
-Thirty minutes, in Nepali or English. We'll look at your current site or listing, tell you what we'd change first, and send a fixed quote afterwards.
+Tell us a little about your business on the [website](https://digital-pragati.vercel.app/#contact). We'll review your current site before the call so the time is useful.
 
-- **Website:** [digital-pragati.vercel.app](https://digital-pragati.vercel.app)
-- **Email:** forcraftcodestudio@gmail.com
-- **Where we work:** Sydney, Kathmandu and Pokhara
+- Reply within one business day, Sydney or Kathmandu time
+- Written fixed quote after the call
+- No obligation and no lock-in contract
 
-We reply within one business day, Sydney or Kathmandu time.
+**Email:** forcraftcodestudio@gmail.com
 
 ---
 
 ## Run the website
 
-The repository contains:
+The website is one plain HTML page, with a small Next.js backend that receives its enquiries.
 
 | Folder | What it is |
 | --- | --- |
-| [`web/`](web/) | The main website, built with Next.js 16: landing page, enquiry form, enquiry backend (database + email) and a password-protected enquiries list. |
-| [`static-site/`](static-site/) | A standalone HTML version of the website. Its enquiry form sends to the main site's backend. |
+| [`static-site/`](static-site/) | **The website**, and its only source: plain HTML, CSS and JavaScript with no build step. GitHub Pages publishes this folder as-is; Vercel serves the same files. |
+| [`web/`](web/) | The Next.js app deployed on Vercel. At build time it copies `static-site/` into its `public/` folder and serves it at `/`. It adds the backend: the enquiry API, the database, email delivery and the password-protected enquiries list at `/admin`. |
 | [`TEST-CASES.md`](TEST-CASES.md) | The quality bar the website is tested against. |
 
-To run the main website you need Node.js 20.9 or newer:
+To run it locally you need Node.js 20.9 or newer:
 
 ```bash
 cd web
@@ -114,4 +131,4 @@ npm install
 npm run dev
 ```
 
-Then open <http://localhost:3000>. Configuration, email and database setup, testing and deployment are covered in the [developer guide](web/README.md).
+Then open <http://localhost:3000>. Edit the website in `static-site/`, not `web/public/`: the copy in `web/public/` is regenerated every time the app starts or builds. Configuration, email and database setup, testing and deployment are covered in the [developer guide](web/README.md).

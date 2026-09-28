@@ -145,8 +145,55 @@ section{scroll-margin-top:80px}
 .svc p{color:var(--muted)}
 .svc ul{margin:4px 0 0;padding-left:1.1em;color:var(--muted);font-size:1rem;display:grid;gap:2px}
 
-/* work */
-.work{display:grid;gap:20px}
+/* work: concept builds carousel */
+/* Slide width and side padding both use cqi (the carousel's own width), so the
+   first and last slides can sit exactly centred. */
+.carousel{display:grid;gap:18px;container-type:inline-size}
+.carousel-track{--slide:min(880px,86cqi);position:relative;display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;padding:6px calc((100cqi - var(--slide))/2) 14px;scrollbar-width:none;border-radius:var(--r)}
+.carousel-track::-webkit-scrollbar{display:none}
+.carousel-track:focus-visible{outline-offset:-3px}
+.carousel-track>.case{flex:0 0 var(--slide);scroll-snap-align:center}
+.carousel.js .case{transition:transform .5s var(--ease-out,ease),opacity .5s ease,box-shadow .5s ease;transform:scale(.94);opacity:.5;cursor:pointer}
+.carousel.js .case.is-active{transform:none;opacity:1;cursor:auto;box-shadow:0 24px 60px -28px color-mix(in srgb,var(--hue,#1F3D8A) 70%,transparent)}
+.carousel .case-vis{position:relative;overflow:hidden;display:grid;justify-items:center;align-content:space-between;gap:22px;padding:22px 22px 0;border-bottom:0;min-height:300px;background:linear-gradient(150deg,var(--hue,#1F3D8A),color-mix(in srgb,var(--hue,#1F3D8A) 45%,#0C1122))}
+.carousel .case-vis::before{content:"";position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.16) 1px,transparent 1.5px) 0 0/18px 18px;mask-image:linear-gradient(to bottom,#000,transparent 85%);pointer-events:none}
+.carousel .phone{position:relative;width:190px;box-shadow:0 -10px 40px rgba(0,0,0,.28)}
+.flow{position:relative;list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.flow li{display:inline-flex;align-items:center;gap:6px;font:500 .78rem/1 var(--mono);color:#fff;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(4px)}
+.flow li:not(:last-child)::after{content:"→";opacity:.7;margin-right:-2px}
+.carousel-controls{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.carousel-dots{display:flex}
+.dot{width:48px;height:48px;display:grid;place-items:center;border:0;background:none;cursor:pointer;border-radius:12px}
+.dot::before{content:"";width:10px;height:10px;border-radius:999px;background:var(--line);transition:width .3s var(--ease-out,ease),background-color .3s ease}
+.dot[aria-current="true"]::before{width:28px;background:var(--accent)}
+.dot:hover::before{background:var(--muted)}
+.dot[aria-current="true"]:hover::before{background:var(--accent)}
+.carousel-count{font:500 .95rem/1 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.carousel-count b{color:var(--ink);font-weight:500}
+.carousel-arrows{display:flex;gap:8px}
+.arrow{width:48px;height:48px;display:grid;place-items:center;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:border-color .2s ease,transform .2s ease}
+.arrow:hover:not(:disabled){border-color:var(--ink);transform:translateY(-1px)}
+.arrow:disabled{opacity:.35;cursor:default}
+.arrow svg{width:22px;height:22px}
+.carousel-progress{height:3px;border-radius:3px;background:var(--line);overflow:hidden}
+.carousel-progress span{display:block;height:100%;background:var(--accent);transform-origin:left;transform:scaleX(.3333)}
+/* the slide in focus builds its wireframe as it arrives */
+@keyframes rise-in{from{transform:scaleX(.08);opacity:.2}}
+.carousel.js .phone>*{animation:none}
+.carousel.js .case.is-active .phone>*{animation:rise-in .55s var(--ease-out,ease) both}
+.carousel.js .case.is-active .phone>:nth-child(2){animation-delay:.06s}
+.carousel.js .case.is-active .phone>:nth-child(3){animation-delay:.12s}
+.carousel.js .case.is-active .phone>:nth-child(4){animation-delay:.18s}
+.carousel.js .case.is-active .phone>:nth-child(5){animation-delay:.24s}
+.carousel.js .case.is-active .phone>:nth-child(6){animation-delay:.3s}
+.phone>*{transform-origin:left center}
+@media (min-width:768px){
+  .carousel .case{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
+  .carousel .case-vis{min-height:380px;padding:28px 28px 0}
+  .carousel .phone{width:210px}
+  .carousel .case-body{padding:clamp(24px,3.4vw,40px);align-content:center}
+  .carousel .case-body h3{font-size:clamp(1.4rem,2.4vw,1.9rem)}
+}
 .case{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid}
 .case-vis{background:var(--tint);padding:24px 24px 0;display:flex;justify-content:center;border-bottom:1px solid var(--line)}
 .phone{width:168px;max-width:100%;aspect-ratio:9/16;background:var(--surface);border:1px solid var(--line);border-bottom:0;border-radius:22px 22px 0 0;padding:14px 12px 0;display:grid;align-content:start;gap:8px;box-shadow:0 -6px 24px rgba(18,26,51,.07)}
@@ -243,7 +290,6 @@ body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
   body{padding-bottom:0}
   .nav{display:flex}
   .top-cta{display:inline-flex}
-  .work{grid-template-columns:repeat(3,1fr)}
   .market{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
 }
 @media (min-width:980px){
@@ -502,34 +548,58 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
       <h2 id="work-title">How we would approach three typical briefs.</h2>
       <p class="lede">These are studio concepts, not client projects. They show the structure and flows we recommend for each type of business.</p>
     </div>
-    <div class="work">
-      <article class="case">
-        <div class="case-vis" aria-hidden="true"><div class="phone"><div class="bar b1"></div><div class="hd" style="background:#1F3D8A"></div><div class="bar b2"></div><div class="row"><div></div><div></div></div><div class="cta" style="background:#C21F37"></div><div class="bar"></div></div></div>
-        <div class="case-body">
-          <span class="tag">Concept</span>
-          <h3>Migration agency, Parramatta</h3>
-          <p>A consultation funnel that asks visa type and timeline before booking, so the agent's first call is already qualified.</p>
-          <dl><dt>Flow</dt><dd>Visa finder → pre-screen → book</dd><dt>SEO</dt><dd>Suburb pages across Western Sydney</dd></dl>
+    <div class="carousel work" role="region" aria-roledescription="carousel" aria-labelledby="work-title">
+      <div class="carousel-track" tabindex="0" aria-label="Concept builds. Use the arrow keys to move between concepts.">
+        <article class="case" style="--hue:#1F3D8A" role="group" aria-roledescription="slide" aria-label="1 of 3: Migration agency, Parramatta">
+          <div class="case-vis" aria-hidden="true">
+            <ol class="flow"><li>Visa finder</li><li>Pre-screen</li><li>Book</li></ol>
+            <div class="phone"><div class="bar b1"></div><div class="hd" style="background:#1F3D8A"></div><div class="bar b2"></div><div class="row"><div></div><div></div></div><div class="cta" style="background:#C21F37"></div><div class="bar"></div></div>
+          </div>
+          <div class="case-body">
+            <span class="tag">Concept</span>
+            <h3>Migration agency, Parramatta</h3>
+            <p>A consultation funnel that asks visa type and timeline before booking, so the agent's first call is already qualified.</p>
+            <dl><dt>Flow</dt><dd>Visa finder → pre-screen → book</dd><dt>SEO</dt><dd>Suburb pages across Western Sydney</dd></dl>
+          </div>
+        </article>
+        <article class="case" style="--hue:#2E6E68" role="group" aria-roledescription="slide" aria-label="2 of 3: Lakeside hotel, Pokhara">
+          <div class="case-vis" aria-hidden="true">
+            <ol class="flow"><li>Room</li><li>Dates</li><li>Deposit</li></ol>
+            <div class="phone"><div class="hd" style="background:#2E6E68"></div><div class="bar b1"></div><div class="bar b2"></div><div class="row"><div></div><div></div></div><div class="row"><div></div><div></div></div><div class="cta" style="background:#C21F37"></div></div>
+          </div>
+          <div class="case-body">
+            <span class="tag">Concept</span>
+            <h3>Lakeside hotel, Pokhara</h3>
+            <p>Direct booking enquiries with a Khalti or eSewa deposit, and room details cached for guests on weak mobile signal.</p>
+            <dl><dt>Flow</dt><dd>Room → dates → deposit</dd><dt>PWA</dt><dd>Offline directions and check-in info</dd></dl>
+          </div>
+        </article>
+        <article class="case" style="--hue:#6B4BA8" role="group" aria-roledescription="slide" aria-label="3 of 3: PTE institute, Putalisadak">
+          <div class="case-vis" aria-hidden="true">
+            <ol class="flow"><li>Batch</li><li>Register</li><li>Pay</li></ol>
+            <div class="phone"><div class="bar b2"></div><div class="row"><div></div><div></div></div><div class="hd" style="background:#6B4BA8"></div><div class="bar b1"></div><div class="cta" style="background:#C21F37"></div><div class="bar b2"></div></div>
+          </div>
+          <div class="case-body">
+            <span class="tag">Concept</span>
+            <h3>PTE institute, Putalisadak</h3>
+            <p>Batch schedules, mock-test sign-up and fee payment by Fonepay QR, with reminders before each class.</p>
+            <dl><dt>Flow</dt><dd>Batch → register → pay</dd><dt>SEO</dt><dd>"PTE classes Kathmandu" landing page</dd></dl>
+          </div>
+        </article>
+      </div>
+      <div class="carousel-controls" hidden>
+        <div class="carousel-dots" role="group" aria-label="Choose a concept">
+          <button type="button" class="dot" aria-label="Show concept 1: Migration agency, Parramatta" aria-current="true"></button>
+          <button type="button" class="dot" aria-label="Show concept 2: Lakeside hotel, Pokhara" aria-current="false"></button>
+          <button type="button" class="dot" aria-label="Show concept 3: PTE institute, Putalisadak" aria-current="false"></button>
         </div>
-      </article>
-      <article class="case">
-        <div class="case-vis" aria-hidden="true"><div class="phone"><div class="hd" style="background:#2E6E68"></div><div class="bar b1"></div><div class="bar b2"></div><div class="row"><div></div><div></div></div><div class="row"><div></div><div></div></div><div class="cta" style="background:#C21F37"></div></div></div>
-        <div class="case-body">
-          <span class="tag">Concept</span>
-          <h3>Lakeside hotel, Pokhara</h3>
-          <p>Direct booking enquiries with a Khalti or eSewa deposit, and room details cached for guests on weak mobile signal.</p>
-          <dl><dt>Flow</dt><dd>Room → dates → deposit</dd><dt>PWA</dt><dd>Offline directions and check-in info</dd></dl>
+        <p class="carousel-count" aria-live="polite"><b>1</b> / 3</p>
+        <div class="carousel-arrows">
+          <button type="button" class="arrow" data-step="-1" aria-label="Previous concept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button type="button" class="arrow" data-step="1" aria-label="Next concept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
         </div>
-      </article>
-      <article class="case">
-        <div class="case-vis" aria-hidden="true"><div class="phone"><div class="bar b2"></div><div class="row"><div></div><div></div></div><div class="hd" style="background:#6B4BA8"></div><div class="bar b1"></div><div class="cta" style="background:#C21F37"></div><div class="bar b2"></div></div></div>
-        <div class="case-body">
-          <span class="tag">Concept</span>
-          <h3>PTE institute, Putalisadak</h3>
-          <p>Batch schedules, mock-test sign-up and fee payment by Fonepay QR, with reminders before each class.</p>
-          <dl><dt>Flow</dt><dd>Batch → register → pay</dd><dt>SEO</dt><dd>"PTE classes Kathmandu" landing page</dd></dl>
-        </div>
-      </article>
+      </div>
+      <div class="carousel-progress" aria-hidden="true" hidden><span></span></div>
     </div>
   </div>
 </section>
@@ -603,7 +673,9 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
       </ul>
     </div>
 
-    <!-- data-endpoint: the Next.js site's enquiry API on Vercel. List this site's address in ENQUIRY_ALLOWED_ORIGINS there. -->
+    <!-- Where the form posts: on GitHub Pages (hostname ending in github.io) or a file: URL, to data-endpoint,
+         the Next.js site's enquiry API on Vercel (list this site's address in ENQUIRY_ALLOWED_ORIGINS there).
+         Anywhere else the page is served by the Next.js site itself, so it posts to the same-origin /api/enquiry. -->
     <form id="quote" novalidate data-endpoint="https://digital-pragati.vercel.app/api/enquiry">
       <div id="form-fields" style="display:grid;gap:18px">
         <fieldset>
@@ -744,9 +816,21 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
     'f-contact':v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())||v.replace(/\D/g,'').length>=8
   };
   const validate=id=>{const i=$('#'+id),ok=checks[id](i.value);i.setAttribute('aria-invalid',String(!ok));$('#e-'+id.slice(2)).hidden=ok;return ok;};
-  Object.keys(checks).forEach(id=>$('#'+id).addEventListener('blur',()=>{if($('#'+id).value)validate(id)}));
-  // Sends to the Next.js site's /api/enquiry (set in data-endpoint on the form).
+  // Leaving a field only ever shows its error; the error clears while typing,
+  // as soon as the value is valid. Hiding it on blur collapsed the space above
+  // the submit button mid-click, so a click could land where the button used to be.
+  Object.keys(checks).forEach(id=>{
+    const input=$('#'+id),msg=$('#e-'+id.slice(2));
+    input.addEventListener('blur',()=>{if(input.value&&!checks[id](input.value)){input.setAttribute('aria-invalid','true');msg.hidden=false;}});
+    input.addEventListener('input',()=>{if(!msg.hidden&&checks[id](input.value)){input.setAttribute('aria-invalid','false');msg.hidden=true;}});
+  });
+  // Sends to the Next.js site's /api/enquiry. Rule: on GitHub Pages (hostname ends
+  // in github.io) or a file: URL there is no backend on this origin, so use the
+  // absolute data-endpoint on the form; anywhere else (production, preview
+  // deployments, local next start) the page is served by that site itself, so
+  // post to the same-origin /api/enquiry.
   // Success is shown only when the server confirms it received the enquiry.
+  const endpointFor=(loc,fixed)=>loc.protocol==='file:'||/(^|\.)github\.io$/.test(loc.hostname)?fixed:'/api/enquiry';
   const fallback="We couldn't send your enquiry just now. Try again in a few minutes, or email us at forcraftcodestudio@gmail.com.";
   const fieldFor={name:'f-name',business:'f-biz',contact:'f-contact'};
   const showFormError=msg=>{const el=$('#form-err');el.textContent=msg;el.hidden=false;};
@@ -755,7 +839,7 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
     $('#form-err').hidden=true;
     const bad=Object.keys(checks).filter(id=>!validate(id));
     if(bad.length){$('#'+bad[0]).focus();return;}
-    const url=form.dataset.endpoint;
+    const url=endpointFor(location,form.dataset.endpoint);
     if(!url){showFormError('This form isn’t connected yet. Email us at forcraftcodestudio@gmail.com.');return;}
     const btn=$('#submit'),label=btn.textContent;btn.disabled=true;btn.textContent='Sending…';
     const data=Object.fromEntries(new FormData(form));
@@ -777,6 +861,47 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
     }
     showFormError(body.error||fallback);
   });
+
+  // Concept builds carousel. Without this script the cards stay a plain
+  // scrollable row; with it, the slide nearest the centre is active and the
+  // controls, dots, counter and progress line follow the scroll position.
+  (()=>{
+    const root=$('.carousel');if(!root)return;
+    const track=root.querySelector('.carousel-track'),slides=[...track.children];
+    const dots=[...root.querySelectorAll('.dot')],count=root.querySelector('.carousel-count b');
+    const [prev,next]=root.querySelectorAll('.arrow'),bar=root.querySelector('.carousel-progress span');
+    const calm=matchMedia('(prefers-reduced-motion: reduce)');
+    let active=-1,ticking=false;
+    const offsetFor=s=>s.offsetLeft-(track.clientWidth-s.offsetWidth)/2;
+    const nearest=()=>{let best=0,gap=Infinity;slides.forEach((s,i)=>{const d=Math.abs(offsetFor(s)-track.scrollLeft);if(d<gap){gap=d;best=i}});return best;};
+    const setActive=i=>{
+      if(i===active)return;active=i;
+      slides.forEach((s,k)=>s.classList.toggle('is-active',k===i));
+      dots.forEach((d,k)=>d.setAttribute('aria-current',String(k===i)));
+      count.textContent=i+1;prev.disabled=i===0;next.disabled=i===slides.length-1;
+    };
+    const sync=()=>{
+      ticking=false;setActive(nearest());
+      const max=track.scrollWidth-track.clientWidth,n=slides.length;
+      bar.style.transform=`scaleX(${max>0?(1/n)+(1-1/n)*(track.scrollLeft/max):1})`;
+    };
+    const go=i=>{i=Math.max(0,Math.min(slides.length-1,i));track.scrollTo({left:offsetFor(slides[i]),behavior:calm.matches?'auto':'smooth'});};
+    track.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(sync);}},{passive:true});
+    addEventListener('resize',()=>{go(active);sync();});
+    prev.addEventListener('click',()=>go(active-1));
+    next.addEventListener('click',()=>go(active+1));
+    dots.forEach((d,i)=>d.addEventListener('click',()=>go(i)));
+    slides.forEach((s,i)=>s.addEventListener('click',()=>{if(i!==active)go(i);}));
+    track.addEventListener('keydown',e=>{
+      const step={ArrowRight:1,ArrowLeft:-1}[e.key];
+      if(step){e.preventDefault();go(active+step);}
+      else if(e.key==='Home'){e.preventDefault();go(0);}
+      else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    });
+    root.classList.add('js');
+    root.querySelectorAll('[hidden]').forEach(el=>el.hidden=false);
+    sync();
+  })();
 
   // Service worker
   if('serviceWorker' in navigator&&location.protocol!=='file:'){

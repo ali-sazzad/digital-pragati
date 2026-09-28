@@ -47,3 +47,10 @@ next-env.d.ts
 
 # local PGlite database
 /.data/
+
+# copied from ../static-site by scripts/sync-static-site.mjs; edit static-site/ instead
+/public/index.html
+/public/sw.js
+/public/manifest.webmanifest
+/public/offline.html
+/public/icons/
