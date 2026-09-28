@@ -33,7 +33,9 @@ async function connect(): Promise<Db> {
   if (url) {
     const { default: postgres } = await import("postgres");
     const local = /@(localhost|127\.0\.0\.1)[:/]/.test(url);
-    const sql = postgres(url, { ssl: local ? false : "require", max: 5, onnotice: () => {} });
+    // prepare: false because connection poolers (Neon's, Supabase's, PgBouncer)
+    // don't support prepared statements; it's safe on any Postgres.
+    const sql = postgres(url, { ssl: local ? false : "require", max: 5, prepare: false, onnotice: () => {} });
     await sql.unsafe(schema);
     return { query: async (text, params = []) => (await sql.unsafe(text, params as never[])) as never };
   }
