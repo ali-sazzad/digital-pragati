@@ -6,12 +6,12 @@
 
 <title>Digital Pragati | Web Design Sydney &amp; Kathmandu</title>
 <meta name="description" content="Custom, fast-loading websites and booking platforms for Nepalese-owned businesses in Australia and growing businesses across Nepal. Book a free strategy call.">
-<link rel="canonical" href="https://www.digitalpragati.com/">
+<link rel="canonical" href="https://digital-pragati.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Digital Pragati | Web Design Sydney &amp; Kathmandu">
 <meta property="og:description" content="Fast, conversion-focused websites for businesses in Australia and Nepal. Custom quotes in AUD or NPR.">
-<meta property="og:url" content="https://www.digitalpragati.com/">
-<meta property="og:image" content="https://www.digitalpragati.com/icons/og.png">
+<meta property="og:url" content="https://digital-pragati.vercel.app/">
+<meta property="og:image" content="https://digital-pragati.vercel.app/pwa-icon/512">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#121A33" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0C1122" media="(prefers-color-scheme: dark)">
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;600&family=JetBrains+Mono:wght@500&family=Mukta:wght@600&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Digital Pragati","description":"Web design, UI/UX, local SEO and progressive web apps for businesses in Australia and Nepal.","url":"https://www.digitalpragati.com/","logo":"https://www.digitalpragati.com/icons/icon-512.png","areaServed":[{"@type":"Country","name":"Australia"},{"@type":"Country","name":"Nepal"}],"location":[{"@type":"Place","name":"Sydney","address":{"@type":"PostalAddress","addressLocality":"Sydney","addressRegion":"NSW","addressCountry":"AU"}},{"@type":"Place","name":"Kathmandu","address":{"@type":"PostalAddress","addressLocality":"Kathmandu","addressCountry":"NP"}}],"knowsAbout":["Web design","Conversion rate optimisation","Local SEO","Progressive web apps","Online booking"],"currenciesAccepted":"AUD, NPR"}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Digital Pragati","description":"Web design, UI/UX, local SEO and progressive web apps for businesses in Australia and Nepal.","url":"https://digital-pragati.vercel.app/","logo":"https://digital-pragati.vercel.app/pwa-icon/512","areaServed":[{"@type":"Country","name":"Australia"},{"@type":"Country","name":"Nepal"}],"location":[{"@type":"Place","name":"Sydney","address":{"@type":"PostalAddress","addressLocality":"Sydney","addressRegion":"NSW","addressCountry":"AU"}},{"@type":"Place","name":"Kathmandu","address":{"@type":"PostalAddress","addressLocality":"Kathmandu","addressCountry":"NP"}}],"knowsAbout":["Web design","Conversion rate optimisation","Local SEO","Progressive web apps","Online booking"],"currenciesAccepted":"AUD, NPR"}
 </script>
 <style>
 :root{
@@ -603,7 +603,7 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
       </ul>
     </div>
 
-    <!-- data-endpoint: the Next.js site's enquiry API on Vercel. Switch to https://digitalpragati.com/api/enquiry once that domain is connected, and list this site's address in ENQUIRY_ALLOWED_ORIGINS there. -->
+    <!-- data-endpoint: the Next.js site's enquiry API on Vercel. List this site's address in ENQUIRY_ALLOWED_ORIGINS there. -->
     <form id="quote" novalidate data-endpoint="https://digital-pragati.vercel.app/api/enquiry">
       <div id="form-fields" style="display:grid;gap:18px">
         <fieldset>
@@ -747,7 +747,7 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
   Object.keys(checks).forEach(id=>$('#'+id).addEventListener('blur',()=>{if($('#'+id).value)validate(id)}));
   // Sends to the Next.js site's /api/enquiry (set in data-endpoint on the form).
   // Success is shown only when the server confirms it received the enquiry.
-  const fallback="We couldn't send your enquiry just now. Try again in a few minutes, or email us at hello@digitalpragati.com.";
+  const fallback="We couldn't send your enquiry just now. Try again in a few minutes, or email us at forcraftcodestudio@gmail.com.";
   const fieldFor={name:'f-name',business:'f-biz',contact:'f-contact'};
   const showFormError=msg=>{const el=$('#form-err');el.textContent=msg;el.hidden=false;};
   form.addEventListener('submit',async e=>{
@@ -756,7 +756,7 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
     const bad=Object.keys(checks).filter(id=>!validate(id));
     if(bad.length){$('#'+bad[0]).focus();return;}
     const url=form.dataset.endpoint;
-    if(!url){showFormError('This form isn’t connected yet. Email us at hello@digitalpragati.com.');return;}
+    if(!url){showFormError('This form isn’t connected yet. Email us at forcraftcodestudio@gmail.com.');return;}
     const btn=$('#submit'),label=btn.textContent;btn.disabled=true;btn.textContent='Sending…';
     const data=Object.fromEntries(new FormData(form));
     let res=null,body={};

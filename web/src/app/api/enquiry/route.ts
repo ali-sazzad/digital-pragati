@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 // email/phone, market ("au" | "np"), need, message, website (honeypot).
 //
 // Browsers may call it only from this site or an origin listed in
-// ENQUIRY_ALLOWED_ORIGINS (comma-separated, e.g. https://www.digitalpragati.com).
+// ENQUIRY_ALLOWED_ORIGINS (comma-separated, e.g. https://ali-sazzad.github.io).
 
 const MAX_BYTES = 20_000;
 const WINDOW_MS = 10 * 60 * 1000;

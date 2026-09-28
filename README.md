@@ -88,8 +88,8 @@ Not as part of our launch service. We focus on sites that bring in enquiries. If
 
 Thirty minutes, in Nepali or English. We'll look at your current site or listing, tell you what we'd change first, and send a fixed quote afterwards.
 
-- **Website:** [digitalpragati.com](https://digitalpragati.com)
-- **Email:** hello@digitalpragati.com
+- **Website:** [digital-pragati.vercel.app](https://digital-pragati.vercel.app)
+- **Email:** forcraftcodestudio@gmail.com
 - **Where we work:** Sydney, Kathmandu and Pokhara
 
 We reply within one business day, Sydney or Kathmandu time.

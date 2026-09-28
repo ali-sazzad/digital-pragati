@@ -50,7 +50,7 @@ cp .env.example .env.local
 | `PGLITE_DIR` | Optional | Where PGlite stores data when `DATABASE_URL` is empty. Default `.data/pglite`. |
 | `ADMIN_PASSWORD` | `/admin` | Without it, the admin page stays closed. |
 | `ADMIN_USER` | Optional | Admin username. Default `admin`. |
-| `ENQUIRY_ALLOWED_ORIGINS` | Static site | Comma-separated site addresses allowed to post to `/api/enquiry` from a browser, e.g. `https://www.digitalpragati.com`. |
+| `ENQUIRY_ALLOWED_ORIGINS` | Static site | Comma-separated site addresses allowed to post to `/api/enquiry` from a browser, e.g. `https://ali-sazzad.github.io`. |
 | `ENQUIRY_RATE_LIMIT` | Optional | Enquiries per visitor per 10 minutes on `/api/enquiry`. Default 5. |
 | `ENQUIRY_DELIVERY` | Testing | Set to `log` to print enquiries instead of emailing them. |
 
@@ -73,7 +73,7 @@ The public API at `/api/enquiry` accepts JSON or URL-encoded form data. It is pr
 
 ### Connecting the static site
 
-The static site's form sends to the address in its `data-endpoint` attribute (in `../static-site/index.html`), currently `https://digital-pragati.vercel.app/api/enquiry` (the live Vercel site; switch to `https://digitalpragati.com/api/enquiry` once that domain is connected). To connect it to your own copy:
+The static site's form sends to the address in its `data-endpoint` attribute (in `../static-site/index.html`), currently `https://digital-pragati.vercel.app/api/enquiry` (the live Vercel site). To connect it to your own copy:
 
 1. Point `data-endpoint` at this site's `/api/enquiry`.
 2. Add the static site's address to `ENQUIRY_ALLOWED_ORIGINS` here.

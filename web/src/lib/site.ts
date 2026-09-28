@@ -1,9 +1,9 @@
 // Single source for business facts and page copy.
-// TODO: confirm the digitalpragati.com domain and hello@ mailbox before launch.
+// Points at the Vercel deployment until a custom domain is connected.
 export const site = {
   name: "Digital Pragati",
-  url: "https://digitalpragati.com",
-  email: "hello@digitalpragati.com",
+  url: "https://digital-pragati.vercel.app",
+  email: "forcraftcodestudio@gmail.com",
   title: "Nepali Business Web Design, Australia & Nepal | Digital Pragati",
   description:
     "Lead-generation websites for Nepali-owned businesses in Sydney, Kathmandu and Pokhara. Strategy, copywriting, local SEO and fast mobile builds, custom-quoted.",
