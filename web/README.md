@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pragati Digital: Next.js site
 
-## Getting Started
+The main Pragati Digital website: landing page, enquiry form, enquiry backend and admin list. See the [project README](../README.md) for the full picture, configuration and deployment.
 
-First, run the development server:
+## Commands
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # development server on http://localhost:3000
+npm run build      # production build
+npm start          # serve the production build
+npm run lint
+npm run test:e2e   # build, then run the Playwright suite
+npm test           # run the Playwright suite against the existing build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Requires Node.js 20.9 or newer. Configuration goes in `.env.local`; copy [`.env.example`](.env.example) to start.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where things are
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Page copy and business details**: `src/lib/site.ts`
+- **Landing page**: `src/app/page.tsx`
+- **Styles, including all animation**: `src/app/globals.css`
+- **Enquiries**: `src/app/actions.ts` (main form), `src/app/api/enquiry/route.ts` (public API), `src/lib/enquiries.ts` (save, email and list)
+- **Admin list**: `src/app/admin/page.tsx`, protected by `src/proxy.ts`
+- **Tests**: `tests/pragati.spec.ts`, mapped to the IDs in [`TEST-CASES.md`](../TEST-CASES.md)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project uses Next.js 16, whose APIs differ from older versions; for example, `middleware.ts` is now `proxy.ts`. The Next.js docs for this exact version ship in `node_modules/next/dist/docs/`.
