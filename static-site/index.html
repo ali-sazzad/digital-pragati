@@ -187,6 +187,28 @@ section{scroll-margin-top:80px}
 .carousel.js .case.is-active .phone>:nth-child(5){animation-delay:.24s}
 .carousel.js .case.is-active .phone>:nth-child(6){animation-delay:.3s}
 .phone>*{transform-origin:left center}
+/* phones: a compact stage (the phone rises from the bottom edge) so the whole
+   concept and the controls fit on one screen, with neighbours peeking in */
+@media (max-width:767px){
+  .carousel-track{--slide:84cqi;gap:12px;padding-bottom:10px}
+  .carousel.js .case{transform:scale(.96);opacity:.6}
+  .carousel .case-vis{min-height:0;height:196px;align-content:start;gap:14px;padding:16px 14px 0}
+  .carousel .phone{width:128px;border-radius:18px 18px 0 0;padding:10px 9px 0;gap:6px}
+  .carousel .phone .bar{height:6px}
+  .carousel .phone .hd{height:38px;border-radius:8px}
+  .carousel .phone .row div{height:28px;border-radius:6px}
+  .carousel .phone .cta{height:20px}
+  .carousel .flow{gap:5px}
+  .carousel .flow li{font-size:.72rem;padding:6px 9px;white-space:nowrap}
+  .carousel .case-body{padding:18px 18px 20px;gap:8px}
+  .carousel .case-body h3{font-size:1.2rem}
+  .carousel .case-body p{font-size:.98rem;line-height:1.5}
+  .carousel-controls{gap:8px}
+}
+@media (max-width:419px){
+  /* dots already show the position; keep the counter for screen readers only */
+  .carousel-count{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+}
 @media (min-width:768px){
   .carousel .case{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
   .carousel .case-vis{min-height:380px;padding:28px 28px 0}
