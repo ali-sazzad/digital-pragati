@@ -94,9 +94,10 @@ The tests drive **Microsoft Edge** (`channel: "msedge"` in `playwright.config.ts
 
 Beyond `TEST-CASES.md`, the suite also checks that the service worker never caches `/admin` or `/api/` (SW-01) and that the home page is always revalidated (CACHE-01).
 
-Known gaps:
+On phones (below 768 px) every piece of text on the website is at least 16 px, as MOB-03 requires; a block at the end of the `<style>` in `static-site/index.html` enforces this, so new small text on phones needs adding there.
 
-- **MOB-03** (body text at least 16 px on mobile) is marked as an expected failure. Several small labels in the design are 12 to 15 px: section eyebrows, the concept cards' Flow/SEO labels, the studio-clocks note, the pledge table and footnote, form labels, the carousel counter and flow chips. Raise those sizes in `static-site/index.html` and remove the `test.fail()` to close it.
+Known gap:
+
 - **PERF-01** (LCP within 2.0 s on a throttled mobile connection) depends on the machine's CPU and swings between about 1.8 and 2.5 s from run to run. Confirm it with Lighthouse or a real mid-range phone.
 
 ## Deploying

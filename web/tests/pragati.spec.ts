@@ -766,10 +766,7 @@ test("MOB-02 bottom nav on mobile only", async ({ page }) => {
 });
 
 test("MOB-03 body text at least 16 px on mobile", async ({ page }) => {
-  // Known gap, measured at 360 px: .eyebrow 12.5 px, .case-body dt 11.8 px / dd 14.4 px,
-  // .inst-note 13.4 px, pledge td.why 14 px and td.num 15.2 px, .pledge-note 14.4 px,
-  // form labels 15.2 px (.95rem). All set in static-site/index.html's <style>.
-  test.fail();
+  // static-site/index.html raises all text to 16 px below 768 px.
   await page.setViewportSize(mobile);
   await load(page);
   const small = await page.locator("main p, main li, main dt, main dd, main td, main th, main label, main summary").evaluateAll((els) =>

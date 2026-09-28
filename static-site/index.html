@@ -418,6 +418,28 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
 .phone>:nth-child(6)::after,.phone>:nth-child(6)>div::after{animation-delay:.4s}
 @keyframes shimmer{60%,100%{transform:translateX(100%)}}
 
+/* phones: no text below 16 px (TEST-CASES MOB-03). Kept last so it overrides
+   every smaller size set above; tablet and desktop sizes are unchanged. */
+@media (max-width:767px){
+  .eyebrow,.brand small,.markets-line,.inst-head,.clock span,.meter small,.meter i,.inst-note,
+  .chip,.tag,.case-body dl,.case-body dt,.steps .wk,.pledge-note,
+  label,.legend,.hint,.err,.form-err,footer{font-size:1rem}
+  .eyebrow{letter-spacing:.08em}
+  .brand small{margin-top:4px}
+  .carousel .case-body p,.carousel .flow li{font-size:1rem}
+  .carousel .case-vis{height:auto}
+  .carousel .phone{height:132px;aspect-ratio:auto;overflow:hidden}
+  .pledge-wrap td.num,.pledge-wrap td.why,.pledge-wrap td.num::before{font-size:1rem}
+  .pledge-wrap td.num::before{letter-spacing:.04em}
+  .dock{gap:0;padding-inline:4px}
+  .dock a{font-size:1rem;gap:4px}
+  .dock a.q{font-size:1rem;line-height:1.1;text-align:center;white-space:normal;padding-inline:6px}
+}
+@media (max-width:359px){
+  /* "Process" needs 60 px at 16 px; "Get a quote" wraps onto two lines instead */
+  .dock{grid-template-columns:repeat(4,minmax(60px,1fr)) minmax(72px,1.1fr)}
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .faq details::details-content{transition:none!important}
@@ -473,8 +495,8 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
         <div class="clock"><span>Kathmandu</span><b id="t-ktm">--:--</b><span>NPT · UTC+5:45</span></div>
       </div>
       <div class="meters" aria-live="polite">
-        <div class="meter"><small>LCP</small><b id="m-lcp">…</b><i>target ≤ 2.5 s</i></div>
-        <div class="meter"><small>CLS</small><b id="m-cls">…</b><i>target ≤ 0.1</i></div>
+        <div class="meter"><small>LCP</small><b id="m-lcp">…</b><i>target ≤&nbsp;2.5&nbsp;s</i></div>
+        <div class="meter"><small>CLS</small><b id="m-cls">…</b><i>target ≤&nbsp;0.1</i></div>
         <div class="meter"><small>Page size</small><b id="m-kb">…</b><i>transferred</i></div>
       </div>
       <p class="inst-note">This page, measured in your browser right now. Every site we ship is held to the same numbers.</p>
