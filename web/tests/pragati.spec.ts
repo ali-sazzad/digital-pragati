@@ -761,8 +761,8 @@ test.describe(() => {
     });
     test.info().annotations.push({ type: "Caches", description: JSON.stringify(cached) });
     // The worker is caching (so the negative check means something)...
-    expect(Object.keys(cached)).toContain("pragati-static-v4");
-    expect(cached["pragati-static-v4"]).toEqual(expect.arrayContaining(["/", "/index.html", "/offline.html"]));
+    expect(Object.keys(cached)).toContain("pragati-static-v5");
+    expect(cached["pragati-static-v5"]).toEqual(expect.arrayContaining(["/", "/index.html", "/offline.html"]));
     // ...but nothing under /admin or /api.
     const leaked = Object.values(cached)
       .flat()
