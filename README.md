@@ -18,7 +18,7 @@ We design and engineer fast, custom websites and booking platforms for Nepalese-
 
 Built for how your customers actually search and pay.
 
-![The markets section with Nepal selected: for hotels, institutes and SMEs across Kathmandu, Pokhara, and Beyond, with eSewa, Khalti and Fonepay QR payments](docs/screenshots/markets-nepal.png)
+![The markets section with Nepal selected: for hotels, institutes and SMEs across Kathmandu, Pokhara and beyond, with eSewa, Khalti and Fonepay QR payments](docs/screenshots/markets-nepal.png)
 
 ### Australia
 
@@ -35,7 +35,7 @@ For Nepalese-owned businesses in Sydney, Melbourne, Brisbane and beyond. Your cu
 
 ### Nepal
 
-For hotels, institutes and SMEs across Kathmandu, Pokhara, and Beyond. Your guests and students arrive on everything from Wi-Fi to patchy 3G. We build installable web apps that load fast, keep working offline and take local payments.
+For hotels, institutes and SMEs across Kathmandu, Pokhara and beyond. Your guests and students arrive on everything from Wi-Fi to patchy 3G. We build installable web apps that load fast, keep working offline and take local payments.
 
 *Custom quote in NPR, with an optional monthly maintenance retainer. Payments by eSewa, Khalti or Fonepay QR.*
 
