@@ -56,10 +56,11 @@ Legend: **A** = automated in `tests/pragati.spec.ts`, **M** = manual review.
 |---|---|---|---|
 | PERF-01 | LCP on throttled mobile | LCP ≤ 2.0 s (4× CPU slowdown, 1.6 Mbps / 150 ms RTT) — beats Google's 2.5 s "good" | A |
 | PERF-02 | Layout stability | CLS ≤ 0.05 (half Google's 0.1) | A |
-| PERF-03 | Page weight | HTML + CSS + JS (excluding web fonts) ≤ 90 KB uncompressed | A |
+| PERF-03 | Page weight | HTML + CSS + JS needed to render (excluding web fonts and the animation layer) ≤ 90 KB uncompressed | A |
 | PERF-04 | No render-blocking third-party JS | Zero external `<script>` tags | A |
 | PERF-05 | Fonts don't block text | Google Fonts requested with `display=swap`, preconnect present | A |
 | PERF-06 | Interaction latency | Market toggle updates DOM in < 100 ms | A |
+| PERF-07 | Animation layer stays off the critical path | GSAP, ScrollTrigger, Motion and `fx.js` are self-hosted, requested only after the load event, ≤ 140 KB uncompressed, and not requested at all with reduced motion | A |
 
 ### 5. Accessibility (WCAG 2.2 AA)
 | ID | Test | Pass criterion | Type |

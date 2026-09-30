@@ -943,6 +943,15 @@ tbody th[scope="row"]{text-align:left;font-weight:600;padding:16px 18px;border-b
     sync();
   })();
 
+  // Animation layer (fx.js, GSAP + ScrollTrigger and Motion from vendor/).
+  // Requested after the load event so it never competes with the first paint,
+  // and not at all with reduced motion. async=false keeps execution in order.
+  if(!calm.matches)addEventListener('load',()=>{
+    ['vendor/gsap.min.js','vendor/ScrollTrigger.min.js','vendor/motion.min.js','fx.js'].forEach(src=>{
+      const s=document.createElement('script');s.src=src;s.async=false;document.body.append(s);
+    });
+  });
+
   // Service worker
   if('serviceWorker' in navigator&&location.protocol!=='file:'){
     addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{});});

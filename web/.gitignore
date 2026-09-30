@@ -54,3 +54,5 @@ next-env.d.ts
 /public/manifest.webmanifest
 /public/offline.html
 /public/icons/
+/public/vendor/
+/public/fx.js

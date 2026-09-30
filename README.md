@@ -120,6 +120,7 @@ The website is one plain HTML page, with a small Next.js backend that receives i
 | Folder | What it is |
 | --- | --- |
 | [`static-site/`](static-site/) | **The website**, and its only source: plain HTML, CSS and JavaScript with no build step. GitHub Pages publishes this folder as-is; Vercel serves the same files. |
+| [`static-site/fx.js`](static-site/fx.js) | The animation layer: [GSAP](https://gsap.com) with ScrollTrigger for scroll reveals and the hero parallax, and [Motion](https://motion.dev) (the vanilla JavaScript version of Framer Motion) for spring hover and press feedback. The libraries are self-hosted in `static-site/vendor/`. |
 | [`web/`](web/) | The Next.js app deployed on Vercel. At build time it copies `static-site/` into its `public/` folder and serves it at `/`. It adds the backend: the enquiry API, the database, email delivery and the password-protected enquiries list at `/admin`. |
 | [`TEST-CASES.md`](TEST-CASES.md) | The quality bar the website is tested against. |
 
@@ -132,3 +133,5 @@ npm run dev
 ```
 
 Then open <http://localhost:3000>. Edit the website in `static-site/`, not `web/public/`: the copy in `web/public/` is regenerated every time the app starts or builds. Configuration, email and database setup, testing and deployment are covered in the [developer guide](web/README.md).
+
+The animations are an extra layer on top of a page that is complete without them. They load only after the page has finished loading, so they never slow down the first screen, and they are skipped entirely for visitors who turn on reduced motion. They move things with opacity and transforms only, so nothing on the page jumps.

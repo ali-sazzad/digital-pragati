@@ -5,7 +5,7 @@
 // Only same-origin GET requests inside the worker's scope are handled. The
 // private admin page and the API (admin and api/ under the scope, e.g. /admin
 // and /api/enquiry on Vercel) are never intercepted or cached.
-const CACHE = "pragati-static-v3";
+const CACHE = "pragati-static-v4";
 const PRECACHE = ["./", "./index.html", "./offline.html", "./manifest.webmanifest", "./icons/favicon.svg", "./icons/icon-192.png"];
 const PRIVATE = /^(admin|api)(\/|\?|#|$)/;
 

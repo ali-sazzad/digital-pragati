@@ -405,13 +405,17 @@ for (const size of [mobile, desktop]) {
   });
 }
 
+// The animation layer: libraries in /vendor/ plus /fx.js. PERF-07 budgets it separately.
+const isFx = (url: string) => /^\/(vendor\/|fx\.js$)/.test(new URL(url).pathname);
+
 test("PERF-03 HTML + CSS + JS weight within 90 KB", async ({ page }) => {
-  // Counts every document, stylesheet and script body the page downloads
-  // (uncompressed), including the Google Fonts stylesheet; font files are excluded.
+  // Counts every document, stylesheet and script body the page needs to render
+  // (uncompressed), including the Google Fonts stylesheet; font files and the
+  // animation layer, which loads after the load event, are excluded.
   const bodies: Promise<{ url: string; bytes: number }>[] = [];
   page.on("response", (r) => {
     const type = r.request().resourceType();
-    if (type === "document" || type === "stylesheet" || type === "script")
+    if ((type === "document" || type === "stylesheet" || type === "script") && !isFx(r.url()))
       bodies.push(r.body().then((b) => ({ url: r.url(), bytes: b.length }), () => ({ url: r.url(), bytes: 0 })));
   });
   await load(page);
@@ -421,6 +425,39 @@ test("PERF-03 HTML + CSS + JS weight within 90 KB", async ({ page }) => {
   test.info().annotations.push({ type: "Weight", description: `${(bytes / 1024).toFixed(1)} KB (${detail})` });
   expect(items.some((i) => i.bytes > 0)).toBe(true);
   expect(bytes).toBeLessThanOrEqual(90 * 1024);
+});
+
+test("PERF-07 animation layer loads after the page, within 140 KB", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  const bodies: Promise<number>[] = [];
+  page.on("response", (r) => {
+    if (isFx(r.url())) bodies.push(r.body().then((b) => b.length, () => 0));
+  });
+  await load(page);
+  await expect.poll(() => page.evaluate(() => "gsap" in window && "Motion" in window)).toBe(true);
+  // Every file of the layer is fetched from this origin, and only once the load event has started.
+  const files = await page.evaluate(() => {
+    const loadAt = (performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming).loadEventStart;
+    return performance
+      .getEntriesByType("resource")
+      .filter((e) => /^\/(vendor\/|fx\.js$)/.test(new URL(e.name).pathname))
+      .map((e) => ({ path: new URL(e.name).pathname, sameOrigin: new URL(e.name).origin === location.origin, afterLoad: e.startTime >= loadAt }));
+  });
+  const bytes = (await Promise.all(bodies)).reduce((n, b) => n + b, 0);
+  test.info().annotations.push({ type: "Animation layer", description: `${(bytes / 1024).toFixed(1)} KB` });
+  expect(files.map((f) => f.path).sort()).toEqual(["/fx.js", "/vendor/ScrollTrigger.min.js", "/vendor/gsap.min.js", "/vendor/motion.min.js"]);
+  expect(files.every((f) => f.sameOrigin && f.afterLoad)).toBe(true);
+  expect(bytes).toBeLessThanOrEqual(140 * 1024);
+
+  // With reduced motion none of it is requested.
+  const requested: string[] = [];
+  page.on("request", (r) => {
+    if (isFx(r.url())) requested.push(r.url());
+  });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.reload();
+  await page.waitForLoadState("networkidle");
+  expect(requested).toEqual([]);
 });
 
 test("PERF-04 no third-party scripts", async ({ page }) => {
@@ -724,8 +761,8 @@ test.describe(() => {
     });
     test.info().annotations.push({ type: "Caches", description: JSON.stringify(cached) });
     // The worker is caching (so the negative check means something)...
-    expect(Object.keys(cached)).toContain("pragati-static-v3");
-    expect(cached["pragati-static-v3"]).toEqual(expect.arrayContaining(["/", "/index.html", "/offline.html"]));
+    expect(Object.keys(cached)).toContain("pragati-static-v4");
+    expect(cached["pragati-static-v4"]).toEqual(expect.arrayContaining(["/", "/index.html", "/offline.html"]));
     // ...but nothing under /admin or /api.
     const leaked = Object.values(cached)
       .flat()

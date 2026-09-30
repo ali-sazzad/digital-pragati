@@ -7,6 +7,7 @@ How to run, configure, test and deploy the Digital Pragati website. For what the
 - **The website is [`../static-site/`](../static-site/)**: one plain HTML page with its styles and scripts inline, plus an offline service worker, a web app manifest and icons. It is the only copy of the design and copy. Edit it there.
 - **This folder is a Next.js 16 app** deployed on Vercel. Before `npm run dev` and `npm run build`, [`scripts/sync-static-site.mjs`](scripts/sync-static-site.mjs) copies `../static-site/` into `public/`, and a rewrite in [`next.config.ts`](next.config.ts) serves `public/index.html` at `/`. The copies in `public/` are git-ignored and overwritten on every run, so edits made there are lost.
 - **The app adds the backend**: the enquiry API at `/api/enquiry`, the database, Gmail delivery, and the password-protected enquiries list at `/admin`. It also serves `/offline`, the 404 page, `robots.txt`, `sitemap.xml` and app icons.
+- **Animations** live in [`../static-site/fx.js`](../static-site/fx.js). It uses [GSAP](https://gsap.com) 3 with ScrollTrigger (sections fade and slide in as they scroll into view; the hero ridge drifts as the hero scrolls away) and [Motion](https://motion.dev) (the vanilla JavaScript version of Framer Motion) for spring feedback when buttons and cards are hovered or pressed. The page requests `vendor/gsap.min.js`, `vendor/ScrollTrigger.min.js`, `vendor/motion.min.js` and `fx.js` only after its load event, and not at all when the visitor prefers reduced motion. Only opacity and transforms are animated, so layout never shifts.
 - **GitHub Pages** publishes `../static-site/` as-is (see `../.github/workflows/pages.yml`). Both hosts show the same page.
 
 ## Run it locally
@@ -34,6 +35,7 @@ npm run dev          # copy the static site, then start the dev server on http:/
 npm run build        # copy the static site, then build for production
 npm start            # serve the production build
 npm run sync:static  # copy ../static-site into public/ on its own
+npm run vendor       # rebuild ../static-site/vendor/ from the gsap and motion packages
 npm run lint
 npm run test:e2e     # build, then run the Playwright suite
 npm test             # run the Playwright suite against the existing build
@@ -92,6 +94,8 @@ The Playwright suite in `tests/` checks the home page against every automated ca
 
 The tests drive **Microsoft Edge** (`channel: "msedge"` in `playwright.config.ts`), so no separate browser download is needed on Windows. On other systems, install Edge or run `npx playwright install chromium` and remove the `channel` line.
 
+`gsap`, `motion` and `esbuild` are dev dependencies: the static site has no build step, so `npm run vendor` ([`scripts/build-vendor.mjs`](scripts/build-vendor.mjs)) copies GSAP's minified files and bundles just the Motion functions `fx.js` uses (about 18 KB instead of 147 KB) into `../static-site/vendor/`, and that output is committed. Run it after upgrading either package.
+
 Beyond `TEST-CASES.md`, the suite also checks that the service worker never caches `/admin` or `/api/` (SW-01) and that the home page is always revalidated (CACHE-01).
 
 On phones (below 768 px) every piece of text on the website is at least 16 px, as MOB-03 requires; a block at the end of the `<style>` in `static-site/index.html` enforces this, so new small text on phones needs adding there.
@@ -113,6 +117,8 @@ The site is deployed on Vercel from GitHub: every push to `main` builds and depl
 ```text
 static-site/                   the website (the only copy; GitHub Pages publishes it as-is)
 ├── index.html
+├── fx.js                      animations: GSAP + ScrollTrigger, Motion
+├── vendor/                    self-hosted gsap, ScrollTrigger and Motion (npm run vendor)
 ├── sw.js                      offline support; skips /admin and /api/
 ├── offline.html               shown offline for pages not saved on the device
 ├── manifest.webmanifest
@@ -121,6 +127,7 @@ web/
 ├── .env.example               configuration template
 ├── next.config.ts             serves public/index.html at /, cache headers
 ├── scripts/sync-static-site.mjs  copies ../static-site into public/
+├── scripts/build-vendor.mjs   refreshes ../static-site/vendor/
 ├── public/                    generated copy of ../static-site (git-ignored)
 ├── src/
 │   ├── app/
