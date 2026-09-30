@@ -8,9 +8,17 @@ We design and engineer fast, custom websites and booking platforms for Nepalese-
 
 **Live site:** [digital-pragati.vercel.app](https://digital-pragati.vercel.app) (also on [GitHub Pages](https://ali-sazzad.github.io/digital-pragati/)). Developer setup is at the [end of this page](#run-the-website).
 
+![Digital Pragati home page: "Websites that turn visitors into booked customers", with live studio clocks for Sydney and Kathmandu and this page's own speed readings](docs/screenshots/hero.png)
+
+| Dark mode | On a phone |
+| --- | --- |
+| ![The home page in dark mode](docs/screenshots/hero-dark.png) | <img src="docs/screenshots/mobile.png" alt="The home page on a 390 px wide phone, with the quick menu along the bottom" width="260"> |
+
 ## Two markets, one standard
 
 Built for how your customers actually search and pay.
+
+![The markets section with Nepal selected: for hotels, institutes and SMEs across Kathmandu, Pokhara, and Beyond, with eSewa, Khalti and Fonepay QR payments](docs/screenshots/markets-nepal.png)
 
 ### Australia
 
@@ -27,7 +35,7 @@ For Nepalese-owned businesses in Sydney, Melbourne, Brisbane and beyond. Your cu
 
 ### Nepal
 
-For hotels, institutes and SMEs across Kathmandu, Pokhara and Chitwan. Your guests and students arrive on everything from Wi-Fi to patchy 3G. We build installable web apps that load fast, keep working offline and take local payments.
+For hotels, institutes and SMEs across Kathmandu, Pokhara, and Beyond. Your guests and students arrive on everything from Wi-Fi to patchy 3G. We build installable web apps that load fast, keep working offline and take local payments.
 
 *Custom quote in NPR, with an optional monthly maintenance retainer. Payments by eSewa, Khalti or Fonepay QR.*
 
@@ -42,6 +50,8 @@ For hotels, institutes and SMEs across Kathmandu, Pokhara and Chitwan. Your gues
 
 Four services, focused on one outcome: more enquiries.
 
+![The four services: lead-generation websites, booking and enquiry flows, local SEO and progressive web apps](docs/screenshots/services.png)
+
 - **Lead-generation websites.** Custom-designed pages with copy written around your customers' questions and a clear path to contact. Conversion-focused page structure; copywriting in English and Nepali.
 - **Booking and enquiry flows.** Appointment, consultation, room and class booking that fits in a thumb's reach on a phone. Calendar and reminder integrations; deposit links via eSewa, Khalti or Stripe.
 - **Local SEO.** Rank for "near me" and suburb searches in Australia, and for travellers searching Kathmandu and Pokhara. Google Business Profile alignment; structured data and suburb pages.
@@ -50,6 +60,8 @@ Four services, focused on one outcome: more enquiries.
 ## Concept builds
 
 How we would approach three typical briefs. These are studio concepts, not client projects.
+
+![The Concept builds carousel showing the migration agency concept, with its flow and a phone mockup](docs/screenshots/concept-builds.png)
 
 | Concept | Brief | Flow |
 | --- | --- | --- |
@@ -60,6 +72,8 @@ How we would approach three typical briefs. These are studio concepts, not clien
 ## Performance pledge
 
 The numbers every launch has to hit. We test each site against these limits before handover. If a page misses one after launch, we fix it at no cost.
+
+![The performance pledge table](docs/screenshots/performance-pledge.png)
 
 | Measure | Google's "good" | Our launch limit | Why it matters |
 | --- | --- | --- | --- |
@@ -123,6 +137,7 @@ The website is one plain HTML page, with a small Next.js backend that receives i
 | [`static-site/fx.js`](static-site/fx.js) | The animation layer: [GSAP](https://gsap.com) with ScrollTrigger for a reading-progress bar, word-by-word headings, scroll reveals, self-drawing service icons and the hero parallax, and [Motion](https://motion.dev) (the vanilla JavaScript version of Framer Motion) for spring hover and press feedback, magnetic main buttons and 3D tilting concept phones. The libraries are self-hosted in `static-site/vendor/`. |
 | [`web/`](web/) | The Next.js app deployed on Vercel. At build time it copies `static-site/` into its `public/` folder and serves it at `/`. It adds the backend: the enquiry API, the database, email delivery and the password-protected enquiries list at `/admin`. |
 | [`TEST-CASES.md`](TEST-CASES.md) | The quality bar the website is tested against. |
+| [`docs/screenshots/`](docs/screenshots/) | The screenshots in this README, taken from a production build with animations settled. |
 
 To run it locally you need Node.js 20.9 or newer:
 
